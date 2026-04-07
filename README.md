@@ -90,7 +90,7 @@ before engaging with any programme artefact.
 
 | Document | Governs |
 |---|---|
-| [`docs/ETHOS.md`](docs/ETHOS.md) | Architectural philosophy and stack rationale |
+| [`docs/ETHOS.md`]([docs/ETHOS.md](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/c0e12663e1b7de16a218e7652a0c7b73ce99b72a/docs/ETHOS.md)) | Architectural philosophy and stack rationale |
 | [`docs/DELIVERY.md`](docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
 
 
