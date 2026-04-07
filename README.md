@@ -37,9 +37,9 @@ FRTB, Basel III IRB, BCBS 239, SOC 2, Essential Eight ML4,
 and ISM. Model risk governance artefacts — including a
 pre-structured Risk Committee challenge register,
 epsilon-centric Defense Appendix, and Evidence Gap Register
-— provide first-line documentation of validation stage,
+— provide first-line documentation of the validation stage,
 control boundary conditions, and operator remediation
-obligations, consistent with institutional model risk
+obligations, consistent with the institutional model risk
 management standards and regulatory submission expectations.
 
 Execution integrity is enforced at the orchestration layer
@@ -63,7 +63,7 @@ lifecycle. All configurations are schema-validated against
 XSD policy declarations at the configuration phase:
 runtime parameters — memory allocation, network isolation,
 and container privilege boundaries — must conform to
-declared GRC policy or the workload does not execute.
+declared GRC policy, or the workload does not execute.
 
 Privileged access risk is mitigated by design through
 rootless container execution, eliminating the persistent
@@ -90,8 +90,8 @@ before engaging with any programme artefact.
 
 | Document | Governs |
 |---|---|
-| [`docs/ETHOS.md`](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/ETHOS.md) | Architectural philosophy and stack rationale |
-| [`docs/DELIVERY.md`](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
+| [`docs/ETHOS.md`](docs/ETHOS.md) | Architectural philosophy and stack rationale |
+| [`docs/DELIVERY.md`](docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
 
 → [`Professional-Practice`](https://github.com/whatheheckisthis/Professional-Practice)
 
