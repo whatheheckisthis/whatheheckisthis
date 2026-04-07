@@ -88,10 +88,10 @@ govern both programmes are defined in the
 Professional-Practice repository. Read these documents
 before engaging with any programme artefact.
 
-| Document | Governs |
-|---|---|
-| [`docs/ETHOS.md`]([docs/ETHOS.md](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/c0e12663e1b7de16a218e7652a0c7b73ce99b72a/docs/ETHOS.md)) | Architectural philosophy and stack rationale |
-| [`docs/DELIVERY.md`](docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
+| Document | Location | Governs |
+|---|---|---|
+| ETHOS.md | [`docs/ETHOS.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/ETHOS.md) | Architectural philosophy and stack rationale |
+| DELIVERY.md | [`docs/DELIVERY.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
 
 
 ---
