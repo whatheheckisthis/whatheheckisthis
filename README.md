@@ -93,7 +93,6 @@ before engaging with any programme artefact.
 | [`docs/ETHOS.md`](docs/ETHOS.md) | Architectural philosophy and stack rationale |
 | [`docs/DELIVERY.md`](docs/DELIVERY.md) | Engagement model, delivery artefacts, and GRC control mappings |
 
-→ [`Professional-Practice`](https://github.com/whatheheckisthis/Professional-Practice)
 
 ---
 
