@@ -32,11 +32,9 @@ uplift · Auckland and remote
 ### SIRA — Stochastic Invalidation Risk Architecture
 
 End-to-end control traceability is established through a
-compliance crosswalk aligning engine components to SR 11-7,
-FRTB, Basel III IRB, BCBS 239, SOC 2, Essential Eight ML4,
-and ISM. Model risk governance artefacts — including a
-pre-structured Risk Committee challenge register,
-epsilon-centric Defense Appendix, and Evidence Gap Register
+compliance crosswalk aligning engine components to be mapped across ISM Application Control, ASD
+Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk governance artefacts — including a
+pre-structured Risk Committee challenge register,epsilon-centric Defense Appendix, and Evidence Gap Register
 — provide first-line documentation of the validation stage,
 control boundary conditions, and operator remediation
 obligations, consistent with the institutional model risk
@@ -57,7 +55,7 @@ outside the declared control boundary.
 ### IĀTŌ — Intent-to-Auditable-Trust-Object
 
 Deterministic control execution and zero configuration
-drift are enforced through IĀTŌ — an orchestration
+drift is enforced through IĀTŌ — an orchestration
 assurance programme governing the full SecDevOps delivery
 lifecycle. All configurations are schema-validated against
 XSD policy declarations at the configuration phase:
@@ -74,7 +72,7 @@ passthrough and no silent failure mode. Audit continuity
 is maintained through the MCP orchestration layer,
 producing timestamped, append-only command records per
 session mapped across ISM Application Control, ASD
-Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001, 
+Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. 
 
 → [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 
@@ -84,7 +82,7 @@ Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001,
 
 The engagement model and architectural philosophy that
 govern both programmes are defined in the
-Professional-Practice repository. Read these documents
+reference table. Refer to the reference documents
 before engaging with any programme artefact.
 
 | Document | Location | Governs |
@@ -120,7 +118,7 @@ itsdhruvsetty@gmail.com
 
 All practice artefacts are governed by the IĀTŌ
 control index — a twelve-control taxonomy mapped
-across ISM, SOC 2, and Essential Eight ML4.
+across ISM, SOC 2, and Essential Eight ML3.
 
 | Domain | Controls |
 |---|---|
