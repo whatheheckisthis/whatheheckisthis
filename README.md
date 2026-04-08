@@ -74,8 +74,7 @@ passthrough and no silent failure mode. Audit continuity
 is maintained through the MCP orchestration layer,
 producing timestamped, append-only command records per
 session mapped across ISM Application Control, ASD
-Essential Eight ML4, SOC 2 CC7.2, and NIST SP 800-218
-SSDF.
+Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001, 
 
 → [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 
@@ -99,8 +98,8 @@ before engaging with any programme artefact.
 ## Engagement scope
 
 **Target frameworks:**
-ISM · SOC 2 · Essential Eight ML3/ML4 · AML/CFT ·
-SR 11-7 · NIST SSDF
+ISM · SOC 2 · Essential Eight ML3 · AML/CFT ·
+APRA CPS 220 · ISO/IEC 27001
 
 **Delivery model:**
 Fixed-term · Defined scope · Evidenced target state ·
