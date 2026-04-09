@@ -1,13 +1,11 @@
 # Dhruv Setty
 ### SecDevOps · GRC · Quantitative Risk Governance · Auckland, NZ
 
-Fixed-term uplift contractor operating an independent
-assurance practice from Auckland, New Zealand. Engagements
-target evidence-based control gap closure between operational
-environments and a defined, auditable target state — not
-open-ended improvement programmes. Every engagement
-produces a structured evidence pack navigable by an
-external assessor.
+Fixed-term uplift contractor operating an independent assurance practice from Auckland, New Zealand.
+
+Engagements target evidence-based control gap closure between operational environments and a defined, auditable target state — not open-ended improvement programmes.
+
+Every engagement produces a structured evidence pack, navigable by an external assessor.
 
 **Work rights:** New Zealand citizen · SCV 444 eligible
 
@@ -34,7 +32,7 @@ uplift · Auckland and remote
 End-to-end control traceability is established through a
 compliance crosswalk aligning engine components to be mapped across ISM Application Control, ASD
 Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk governance artefacts — including a
-pre-structured Risk Committee challenge register,epsilon-centric Defense Appendix, and Evidence Gap Register
+pre-structured Risk Committee challenge register, Defense Appendix, and Evidence Gap Register
 — provide first-line documentation of the validation stage,
 control boundary conditions, and operator remediation
 obligations, consistent with the institutional model risk
@@ -54,25 +52,11 @@ outside the declared control boundary.
 
 ### IĀTŌ — Intent-to-Auditable-Trust-Object
 
-Deterministic control execution and zero configuration
-drift is enforced through IĀTŌ — an orchestration
-assurance programme governing the full SecDevOps delivery
-lifecycle. All configurations are schema-validated against
-XSD policy declarations at the configuration phase:
-runtime parameters — memory allocation, network isolation,
-and container privilege boundaries — must conform to
-declared GRC policy, or the workload does not execute.
+Privileged access risk is mitigated by design through rootless container execution, eliminating the persistent root-level daemon attack surface via Linux user namespace isolation.
 
-Privileged access risk is mitigated by design through
-rootless container execution, eliminating the persistent
-root-level daemon attack surface via Linux user namespace
-isolation. Every container lifecycle event is executed
-through an enumerated dispatch harness with no catch-all
-passthrough and no silent failure mode. Audit continuity
-is maintained through the MCP orchestration layer,
-producing timestamped, append-only command records per
-session mapped across ISM Application Control, ASD
-Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. 
+Every container lifecycle event is executed through an enumerated dispatch harness with no catch-all passthrough and no silent failure mode.
+
+Audit continuity is maintained through the MCP orchestration layer, producing timestamped, append-only command records per session mapped across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001.
 
 → [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 
