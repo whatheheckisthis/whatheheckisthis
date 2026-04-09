@@ -14,17 +14,6 @@ uplift · Auckland and remote
 
 ---
 
-## Certifications
-
-| Certification | Body |
-|---|---|
-| GRC Professional (GRCP) | OCEG |
-| GRC Auditor (GRCA) | OCEG |
-| Integrated Risk Management Professional (IRMP) | OCEG |
-| Microsoft Azure Fundamentals (AZ-900) | Microsoft |
-
----
-
 ## Active programmes
 
 ### SIRA — Stochastic Invalidation Risk Architecture
