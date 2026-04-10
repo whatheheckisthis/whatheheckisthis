@@ -12,8 +12,8 @@ Fixed-term uplift contractor operating an independent assurance practice from Au
 
 ### SIRA — Stochastic Invalidation Risk Architecture
 
-End-to-end control traceability is established through a compliance crosswalk aligning engine components across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk governance artefacts — including a pre-structured Risk Committee challenge register, Defense Appendix, and Evidence Gap Register — provide first-line documentation of the validation stage, control boundary conditions, and operator remediation obligations, consistent with institutional model risk management standards and regulatory submission expectations.
-Execution integrity is enforced at the orchestration layer via IĀTŌ-MCP, a governed action gateway operating over the Model Context Protocol. The control surface is fully enumerated: every action invocation is authenticated, timestamped, and recorded as an immutable binary assertion entry in the audit log. No analytical workload executes outside the declared control boundary.
+End-to-end control traceability is established through a compliance crosswalk aligning engine components across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. model risk management artefacts — including a pre-structured risk committee challenge register, defense appendix, and evidence gap register — provide first-line documentation of the validation stage, control boundary conditions, and operator remediation obligations, consistent with institutional MRM standards and regulatory submission expectations.
+Execution integrity is enforced at the orchestration layer via IĀTŌ-MCP, a governed action gateway operating over the model context protocol. The control surface is fully enumerated: every action invocation is authenticated, timestamped, and recorded as an immutable binary assertion entry in the audit log. No analytical workload executes outside the declared control boundary.
 
 → [`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
 
