@@ -1,7 +1,8 @@
 # Dhruv Setty
 ### SecDevOps · GRC · Quantitative Risk Governance · Auckland, NZ
 
-Fixed-term uplift contractor operating an independent assurance practice from Auckland, New Zealand. Engagements target the closure of evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Every engagement produces a structured evidence pack navigable by an external assessor.
+Fixed-term uplift contractor operating an independent assurance practice. 
+Engagements target the closure of evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Every engagement produces a structured evidence pack navigable by an external assessor.
 
 **Work rights:** New Zealand citizen · SCV 444 (unrestricted Australian work rights)
 **Status:** Pursuing accreditation · Available for fixed-term uplift · Auckland and remote
