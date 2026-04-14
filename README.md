@@ -6,8 +6,6 @@ Fixed-term uplift contractor operating an independent assurance practice. Engage
 **Work rights:** New Zealand citizen · SCV 444 (unrestricted Australian work rights)
 **Status:** Pursuing accreditation · Available for fixed-term uplift · Auckland and remote
 
-
-
 ## Active programmes
 
 ### SIRA — Stochastic Invalidation Risk Architecture
@@ -101,14 +99,11 @@ Fixed-term engagements in **Australia** (primary) and the **United Kingdom** (se
 Direct recruiter engagement preferred.
 itsdhruvsetty@gmail.com
 
-
-
-
-
-
-[![Controls](https://img.shields.io/badge/Controls-ISM%20%7C%20SOC2%20%7C%20E8%20ML4-0A66C2?style=flat-square)](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7)
+[![Controls](https://img.shields.io/badge/Controls-ISM%20%7C%20E8%20ML3%20%7C%20IRAP%20%7C%20DISP-0A66C2?style=flat-square)](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7)
+[![Risk](https://img.shields.io/badge/Risk-APRA%20CPS%20220%20%7C%20AML%2FCFT-0A66C2?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice)
 [![Assurance](https://img.shields.io/badge/Assurance-Auditable%20%2B%20Reproducible-2E7D32?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/ETHOS.md)
-[![Practice](https://img.shields.io/badge/Practice-SecDevOps%20Contractor-333333?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice)
-[![Location](https://img.shields.io/badge/Location-Auckland%20NZ-0A66C2?style=flat-square)](https://github.com/whatheheckisthis)
+[![Practice](https://img.shields.io/badge/Practice-GRC%20%7C%20SecDevOps%20%7C%20Quant%20Risk-333333?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice)
+[![Market](https://img.shields.io/badge/Market-AU%20Primary%20%7C%20UK%20Secondary-333333?style=flat-square)](https://github.com/whatheheckisthis)
 [![Status](https://img.shields.io/badge/Status-Active%20Practice-2E7D32?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/DELIVERY.md)
 [![Rights](https://img.shields.io/badge/Work%20Rights-NZ%20Citizen%20%7C%20SCV%20444-333333?style=flat-square)](https://github.com/whatheheckisthis)
+
