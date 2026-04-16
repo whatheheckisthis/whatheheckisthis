@@ -3,18 +3,19 @@
 
 Fixed-term uplift contractor operating an assurance practice. Engagements close evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Each engagement produces a structured, assessor-navigable evidence pack.
 
+>SIRA and IĀTŌ constitute the core assurance control and execution planes of the practice; frameworks, delivery phases, and control mappings are expressed through alignment to external governance standards.
+
 **Work rights:** New Zealand citizen · SCV 444 (unrestricted Australian work rights)
 
 **Status:** Pursuing accreditation · Available for fixed-term uplift engagements · Based in Auckland, available for remote work across Australia and New Zealand
 
-## Active programmes
+## Assurance systems
 
 ### SIRA — Stochastic-Invalidation-Risk-Architecture
 
-We establish end-to-end control traceability using a compliance crosswalk that aligns engine components across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk management artefacts — including a pre-structured risk committee challenge register, defence appendix, and evidence gap register — provide first-line documentation of the validation stage, control boundary conditions, and operator remediation obligations, consistent with institutional MRM standards and regulatory submission expectations. Execution integrity is enforced at the orchestration layer via IĀTŌ-MCP, a governed action gateway operating over the model context protocol. The control surface is fully enumerated: every action invocation is authenticated, timestamped, and recorded as an immutable binary assertion entry in the audit log. No analytical workload executes outside the declared control boundary.
+We establish end-to-end control traceability using a compliance crosswalk aligned across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk governance artefacts — including a risk committee challenge register, defence appendix, and evidence gap register — define validation boundaries and remediation obligations, consistent with institutional MRM expectations and regulatory submission standards.
 
 → [`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
-
 
 
 ### IĀTŌ — Intent-to-Auditable-Trust-Object
@@ -23,6 +24,21 @@ Privileged access risk is eliminated by design through rootless container execut
 
 → [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 
+---
+
+## Validation artefacts
+
+*These repositories represent applied SecDevOps control-analysis and vulnerability-class validation artefacts. They function as executable constructs demonstrating control reasoning, failure-mode abstraction, and reproducible security analysis.*
+
+
+Structured SecDevOps research platform modelling unauthenticated RCE in F5 BIG-IP iControl REST. Focuses on control boundary failure, execution path exposure, and reproducible vulnerability analysis under constrained system assumptions.
+
+→ [`CVE-2021-22986`](https://github.com/whatheheckisthis/CVE-2021-22986)  
+
+Deterministic control validation system grounded in CVE-derived failure class abstraction. Implements structured mapping of vulnerability behaviour into ASVS-aligned control evaluation patterns with repeatable execution semantics.
+
+→ [`Canonical-Extension-CVE-2021-22986`](https://github.com/whatheheckisthis/Canonical-Extension-CVE-2021-22986)
+ 
 
 
 ## Practice framework
