@@ -1,14 +1,15 @@
 # Dhruv Setty
 ### SecDevOps · GRC · Quantitative Risk Governance · Auckland, NZ
 
-Fixed-term uplift contractor operating an independent assurance practice. Engagements target the closure of evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Every engagement produces a structured evidence pack navigable by an external assessor.
- 
+Fixed-term uplift contractor operating an assurance practice. Engagements close evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Each engagement produces a structured, assessor-navigable evidence pack.
+
 **Work rights:** New Zealand citizen · SCV 444 (unrestricted Australian work rights)
-**Status:** Pursuing accreditation · Available for fixed-term uplift · Auckland and remote
+
+**Status:** Pursuing accreditation · Available for fixed-term uplift engagements · Based in Auckland, available for remote work across Australia and New Zealand
 
 ## Active programmes
 
-### SIRA — Stochastic Invalidation Risk Architecture
+### SIRA — Stochastic-Invalidation-Risk-Architecture
 
 We establish end-to-end control traceability using a compliance crosswalk that aligns engine components across ISM Application Control, ASD Essential Eight ML3, SOC 2 CC7.2, and ISO/IEC 27001. Model risk management artefacts — including a pre-structured risk committee challenge register, defence appendix, and evidence gap register — provide first-line documentation of the validation stage, control boundary conditions, and operator remediation obligations, consistent with institutional MRM standards and regulatory submission expectations. Execution integrity is enforced at the orchestration layer via IĀTŌ-MCP, a governed action gateway operating over the model context protocol. The control surface is fully enumerated: every action invocation is authenticated, timestamped, and recorded as an immutable binary assertion entry in the audit log. No analytical workload executes outside the declared control boundary.
 
@@ -51,11 +52,6 @@ Privileged access risk is eliminated by design through rootless container execut
 | ASD Essential Eight ML3 | AU | Preventive and detective control uplift to ML3 |
 | ISM | AU | Control alignment and remediation |
 | IRAP | AU | Assessed environment readiness |
-| DISP | AU | Defence industry security programme alignment |
-| APRA CPS 220 | AU | Operational risk governance and control assurance |
-| AML/CFT | AU | Compliance control implementation and evidence |
-| UK CAF | UK | Cyber Assessment Framework control uplift |
-| Cyber Essentials Plus | UK | Verified technical control implementation |
 
 ## Services
  
@@ -64,8 +60,6 @@ Privileged access risk is eliminated by design through rootless container execut
 | Essential Eight ML3 Uplift | AU · E8 ML3 | 10–16 weeks |
 | ISM Gap Assessment & Remediation | AU · ISM | 8–14 weeks |
 | IRAP / DISP Readiness | AU · IRAP · DISP | 12–20 weeks |
-| UK CAF Uplift | UK · CAF · CE+ | 10–16 weeks |
-| Quantitative Risk Advisory | AU · UK | 6–12 weeks |
  
 ## Controls taxonomy
  
@@ -81,29 +75,20 @@ The IĀTŌ control index governs all practice artefacts — a twelve-control tax
  
 ## Commercial model
  
-| Parameter | Value |
-|---|---|
-| Day rate | NZD $850 |
-| Contract length | 100–120 days · 2 per year |
-| Annual base revenue | ~NZD $187,000 pre-tax |
-| Billing | Milestone or fortnightly · net 14 |
-| Lead source | Specialist recruiters · referrals · GitHub |
+| Parameter           | Value                                                            |
+| ------------------- | ---------------------------------------------------------------- |
+| Day rate            | Market-aligned contractor rate (SecDevOps / GRC uplift scope)    |
+| Engagement model    | Fixed-term SecDevOps uplift engagements (typically 100–120 days) |
+| Delivery cadence    | Capacity-based engagements (~2 per annum)                        |
+| Billing terms       | Milestone-based or fortnightly · Net 14                          |
+| Engagement channels | Specialist recruiters · direct referrals · GitHub                |
+
  
----
- 
-Fixed-term engagements in **Australia** (primary) and the **United Kingdom** (secondary).
- 
-`E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220` · `AML/CFT` · `UK CAF` · `Cyber Essentials Plus`
+`E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220` 
 
 **Engagement enquiries:**
 Direct recruiter engagement preferred.
+
+```
 itsdhruvsetty@gmail.com
-
-[![Controls](https://img.shields.io/badge/Controls-ISM%20%7C%20E8%20ML3%20%7C%20IRAP%20%7C%20DISP-0A66C2?style=flat-square)](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7)
-[![Risk](https://img.shields.io/badge/Risk-APRA%20CPS%20220%20%7C%20AML%2FCFT-0A66C2?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice)
-[![Assurance](https://img.shields.io/badge/Assurance-Auditable%20%2B%20Reproducible-2E7D32?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/ETHOS.md)
-[![Practice](https://img.shields.io/badge/Practice-GRC%20%7C%20SecDevOps%20%7C%20Quant%20Risk-333333?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice)
-[![Market](https://img.shields.io/badge/Market-AU%20Primary%20%7C%20UK%20Secondary-333333?style=flat-square)](https://github.com/whatheheckisthis)
-[![Status](https://img.shields.io/badge/Status-Active%20Practice-2E7D32?style=flat-square)](https://github.com/whatheheckisthis/Professional-Practice/blob/main/docs/DELIVERY.md)
-[![Rights](https://img.shields.io/badge/Work%20Rights-NZ%20Citizen%20%7C%20SCV%20444-333333?style=flat-square)](https://github.com/whatheheckisthis)
-
+```
