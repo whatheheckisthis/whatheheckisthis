@@ -1,5 +1,6 @@
 # Dhruv Setty
-### SecDevOps · GRC · Quantitative Risk Governance · Auckland, NZ
+## Security Engineer (DevSecOps / AppSec) 
+**Building risk modelling, control validation, and security analytics systems**
 
 Fixed-term uplift contractor operating an assurance practice. Engagements close evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Each engagement produces a structured, assessor-navigable evidence pack.
 
