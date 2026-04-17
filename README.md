@@ -29,7 +29,7 @@ Privileged access risk is eliminated by design through rootless container execut
 
 ## Validation artefacts
 
-*These repositories represent applied SecDevOps control-analysis and vulnerability-class validation artefacts. They function as executable constructs demonstrating control reasoning, failure-mode abstraction, and reproducible security analysis.*
+*These repositories represent applied DevSecOps control-analysis and vulnerability-class validation artefacts. They function as executable constructs demonstrating control reasoning, failure-mode abstraction, and reproducible security analysis.*
 
 
 Structured information security research platform modelling unauthenticated RCE in F5 BIG-IP iControl REST. Focuses on control boundary failures, execution-path exposure, and reproducible vulnerability analysis under constrained system assumptions.
