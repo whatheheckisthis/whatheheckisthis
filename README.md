@@ -4,8 +4,6 @@
 
 Fixed-term uplift contractor operating an assurance practice. Engagements close evidence-based control gaps between operational environments and a defined, auditable target state — not ongoing improvement mandates. Each engagement produces a structured, assessor-navigable evidence pack.
 
->SIRA and IĀTŌ constitute the core assurance control and execution planes of the practice; frameworks, delivery phases, and control mappings are expressed through alignment to external governance standards.
-
 **Work rights:** New Zealand citizen · SCV 444 (unrestricted Australian work rights)
 
 **Status:** Pursuing accreditation · Available for fixed-term uplift engagements · Based in Auckland, available for remote work across Australia and New Zealand
