@@ -92,8 +92,8 @@ The IĀTŌ control index governs all practice artefacts — a twelve-control tax
  
 | Parameter           | Value                                                            |
 | ------------------- | ---------------------------------------------------------------- |
-| Day rate            | Market-aligned contractor rate (SecDevOps / GRC uplift scope)    |
-| Engagement model    | Fixed-term SecDevOps uplift engagements (typically 100–120 days) |
+| Day rate            | Market-aligned contractor rate (DevSecOps / GRC uplift scope)    |
+| Engagement model    | Fixed-term DevSecOps uplift engagements (typically 100–120 days) |
 | Delivery cadence    | Capacity-based engagements (~2 per annum)                        |
 | Billing terms       | Milestone-based or fortnightly · Net 14                          |
 | Engagement channels | Specialist recruiters · direct referrals · GitHub                |
