@@ -32,7 +32,7 @@ Privileged access risk is eliminated by design through rootless container execut
 *These repositories represent applied SecDevOps control-analysis and vulnerability-class validation artefacts. They function as executable constructs demonstrating control reasoning, failure-mode abstraction, and reproducible security analysis.*
 
 
-Structured SecDevOps research platform modelling unauthenticated RCE in F5 BIG-IP iControl REST. Focuses on control boundary failure, execution path exposure, and reproducible vulnerability analysis under constrained system assumptions.
+Structured information security research platform modelling unauthenticated RCE in F5 BIG-IP iControl REST. Focuses on control boundary failures, execution-path exposure, and reproducible vulnerability analysis under constrained system assumptions.
 
 → [`CVE-2021-22986`](https://github.com/whatheheckisthis/CVE-2021-22986)  
 
