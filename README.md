@@ -2,18 +2,6 @@
 **Name:** Dhruv Setty
 **Role:** Security Engineer (DevSecOps / AppSec)
 
-| Domain            | Constraint                                                       |
-| ----------------- | ---------------------------------------------------------------- |
-| Input Model       | ∀ inputs ∈ {stubbed, version-controlled, immutable per instance} |
-| Execution         | Deterministic, parameter-driven only                             |
-| Control Flow      | Strict linear sequence (01 → 05)                                 |
-| Environment       | ENV := ∅ (no environment-variable influence permitted)           |
-| Time Dependency   | Δt = 0 (no wall-clock coupling)                                  |
-| Dynamic Execution | ⊘ eval(), ⊘ exec(), ⊘ reflection, ⊘ runtime deserialisation      |
-| Side Effects      | Bounded strictly to declared output layer                        |
-| Reproducibility   | ∀ runs: identical inputs ⇒ identical outputs                     |
-
-
 ## System Overview
 
 The system is defined as an **assurance programme (system context model)** implemented as a bounded, parameterised security engineering platform for deterministic control validation and evidence production. It is instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All behaviour is derived exclusively from these inputs.
@@ -34,7 +22,6 @@ Validation and analytics containers generate structured outputs including contro
 
 >All evidence artefacts are cryptographically bound using SHA-256 hashing, with integrity chaining supported through digital signatures (Ed25519), tamper-evident, verifiable provenance across all generated outputs.
 
----
 
 ## Execution Summary
 
@@ -53,8 +40,20 @@ Validation and analytics containers generate structured outputs including contro
 
 ---
 
->The system is defined as a deterministic execution environment with strict separation of inputs, control mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime instances and eliminating variance introduced by race conditions, floating-point drift, and divergence.
+| Domain            | Constraint                                                       |
+| ----------------- | ---------------------------------------------------------------- |
+| Input Model       | ∀ inputs ∈ {stubbed, version-controlled, immutable per instance} |
+| Execution         | Deterministic, parameter-driven only                             |
+| Control Flow      | Strict linear sequence (01 → 05)                                 |
+| Environment       | ENV := ∅ (no environment-variable influence permitted)           |
+| Time Dependency   | Δt = 0 (no wall-clock coupling)                                  |
+| Dynamic Execution | ⊘ eval(), ⊘ exec(), ⊘ reflection, ⊘ runtime deserialisation      |
+| Side Effects      | Bounded strictly to declared output layer                        |
+| Reproducibility   | ∀ runs: identical inputs ⇒ identical outputs                     |
 
+
+
+>The system is defined as a deterministic execution environment with strict separation of inputs, control mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime instances and eliminating variance introduced by race conditions, floating-point drift, and divergence.
 
 ## Assurance Programmes
 
