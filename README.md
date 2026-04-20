@@ -3,37 +3,41 @@
 **Role:** Security Engineer (DevSecOps / AppSec)
 
 ```mermaid
-flowchart TD
-    A[Security Engineering System] --> B[SIRA Programme]
-    A --> C[IĀTŌ Programme]
-    A --> D[Validation Artefacts]
-    A --> E[Governance and Delivery]
-    B --> D
-    C --> D
-    E --> B
-    E --> C
-```
+flowchart LR
 
+A["SYSTEM CONTEXT<br/><br/>IATO Assurance System<br/>Security engineering platform<br/>for deterministic control validation<br/><br/>"]
+
+A --> B["SYSTEM BOUNDARY<br/><br/>Governance & Assurance Layer<br/>Defines control taxonomy,<br/>assurance intent, and constraints<br/><br/>"]
+
+B --> C["CONTAINER: SIRA<br/><br/>Control Mapping Service<br/>Cross-framework alignment<br/>ISM · SOC2 · IRAP · E8 ML3<br/><br/>"]
+
+C --> D["CONTAINER: IATO<br/><br/>Execution Orchestration Service<br/>Deterministic enforcement model<br/>Auditable system behaviour<br/><br/>"]
+
+D --> E["CONTAINERS: VALIDATION SYSTEMS<br/><br/>EICVS: Control Validation Engine<br/>BAP: Behavioural Analytics Engine<br/>Produces verifiable evidence outputs<br/><br/>"]
+
+classDef node fill:#111827,stroke:#9CA3AF,stroke-width:2px,color:#ffffff,rx:0,ry:0;
+
+class A,B,C,D,E node;
+```
 ---
 
 ## System Overview
 
-```mermaid
-flowchart TD
-    L0[Security Engineering Portfolio System]
 
-    L0 --> L1[SIRA: Risk Architecture Function]
-    L0 --> L2[IĀTŌ: Trust Control Function]
-    L0 --> L3[Validation Artefacts Layer]
-    L0 --> L4[Governance / Delivery Layer]
+The IATO system is an **assurance programme** defined at the **C4 System Context level** as a bounded, parameterised security engineering platform responsible for deterministic control validation and evidence production. The system is instantiated as a configured execution of this programme, where all behaviour is derived from explicitly declared parameters, constants, and stubbed inputs. It does not function as a monitoring or advisory capability; it is a formal assurance mechanism that evaluates, maps, and records control behaviour against a defined and auditable baseline.
 
-    L3 --> V1[CVE-2021-22986: Research Execution]
-    L3 --> V2[Canonical-Extension-CVE-2021-22986: Control Validation Function]
+Within the **system boundary**, the programme comprises a set of cooperating **containers**, each with a strictly defined responsibility in the assurance lifecycle. The Governance and Assurance container defines system-wide constraints, control taxonomy, and execution invariants. The SIRA container operates as a control mapping service, parameterising control definitions and aligning them across external frameworks such as ISM, ASD Essential Eight ML3, SOC 2, and ISO/IEC 27001. The IATO container functions as the execution orchestration service, enforcing deterministic processing semantics and ensuring that all system behaviour is derived from declared inputs with no implicit execution paths.
 
-    L4 --> G1[Practice Framework Registry]
-    L4 --> G2[Delivery Pipeline]
-    L4 --> G3[Commercial Specification Registry]
-```
+All execution is performed against **stubbed, version-controlled inputs**, including fixed test vectors, pre-staged datasets, and declared configuration constants. These inputs define each system instance and ensure that execution is reproducible and bounded. The system explicitly prohibits dynamic code execution and runtime interpretation mechanisms, including but not limited to the use of `eval()`, `exec()`, dynamic deserialisation into executable objects, or equivalent constructs. Environment variables are not used to influence control logic, execution paths, or model behaviour; all operational parameters are defined as immutable, module-level constants at load time. System behaviour is independent of **wall-clock time**; no control evaluation, model output, or decision path may depend on current timestamps, system time drift, or temporal side effects outside of explicitly declared and versioned inputs.
+
+The system further enforces strict input handling guarantees. All ingested data is treated as untrusted and processed through typed, schema-bound interfaces. No input is executed, interpolated into command contexts, or passed to interpreters. Classes of vulnerabilities such as **SQL injection, command injection, deserialisation exploits, and arbitrary code execution** are structurally precluded by design through the absence of dynamic execution paths, strict type enforcement, and prohibition of runtime evaluation mechanisms.
+
+Validation containers, including control validation engines and behavioural analytics pipelines, consume these parameterised inputs and produce artefacts such as cryptographically verifiable evidence records, control trace matrices, and governance outputs. No container performs undeclared external calls, accesses runtime network resources, or mutates input state. All data flows are explicitly defined and unidirectional, and all outputs are written within bounded filesystem scopes.
+
+From a C4 perspective, the system enforces strict **container isolation, deterministic execution, and reproducibility guarantees**. Each container processes only declared inputs and produces outputs that are fully attributable to those inputs and the governing control mappings. Identical system instances, when executed with identical inputs and constants, produce identical outputs. This design ensures that the system is fully auditable, reproducible, and suitable for formal assurance processes, including independent assessment and regulatory submission.
+
+
+
 
 ---
 
