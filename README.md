@@ -2,46 +2,61 @@
 **Name:** Dhruv Setty
 **Role:** Security Engineer (DevSecOps / AppSec)
 
-```mermaid
-flowchart LR
+| Domain            | Constraint                                                       |
+| ----------------- | ---------------------------------------------------------------- |
+| Input Model       | ∀ inputs ∈ {stubbed, version-controlled, immutable per instance} |
+| Execution         | Deterministic, parameter-driven only                             |
+| Control Flow      | Strict linear sequence (01 → 05)                                 |
+| Environment       | ENV := ∅ (no environment-variable influence permitted)           |
+| Time Dependency   | Δt = 0 (no wall-clock coupling)                                  |
+| Dynamic Execution | ⊘ eval(), ⊘ exec(), ⊘ reflection, ⊘ runtime deserialisation      |
+| Side Effects      | Bounded strictly to declared output layer                        |
+| Reproducibility   | ∀ runs: identical inputs ⇒ identical outputs                     |
 
-A["SYSTEM CONTEXT<br/><br/>IATO Assurance System<br/>Security engineering platform<br/>for deterministic control validation<br/><br/>"]
-
-A --> B["SYSTEM BOUNDARY<br/><br/>Governance & Assurance Layer<br/>Defines control taxonomy,<br/>assurance intent, and constraints<br/><br/>"]
-
-B --> C["CONTAINER: SIRA<br/><br/>Control Mapping Service<br/>Cross-framework alignment<br/>ISM · SOC2 · IRAP · E8 ML3<br/><br/>"]
-
-C --> D["CONTAINER: IATO<br/><br/>Execution Orchestration Service<br/>Deterministic enforcement model<br/>Auditable system behaviour<br/><br/>"]
-
-D --> E["CONTAINERS: VALIDATION SYSTEMS<br/><br/>EICVS: Control Validation Engine<br/>BAP: Behavioural Analytics Engine<br/>Produces verifiable evidence outputs<br/><br/>"]
-
-classDef node fill:#111827,stroke:#9CA3AF,stroke-width:2px,color:#ffffff,rx:0,ry:0;
-
-class A,B,C,D,E node;
-```
----
 
 ## System Overview
 
+The system is defined as an **assurance programme (system context model)** implemented as a bounded, parameterised security engineering platform for deterministic control validation and evidence production. It is instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All behaviour is derived exclusively from these inputs.
 
-The IATO system is an **assurance programme** defined at the **C4 System Context level** as a bounded, parameterised security engineering platform responsible for deterministic control validation and evidence production. The system is instantiated as a configured execution of this programme, where all behaviour is derived from explicitly declared parameters, constants, and stubbed inputs. It does not function as a monitoring or advisory capability; it is a formal assurance mechanism that evaluates, maps, and records control behaviour against a defined and auditable baseline.
+The system is structured into three primary containers:
 
-Within the **system boundary**, the programme comprises a set of cooperating **containers**, each with a strictly defined responsibility in the assurance lifecycle. The Governance and Assurance container defines system-wide constraints, control taxonomy, and execution invariants. The SIRA container operates as a control mapping service, parameterising control definitions and aligning them across external frameworks such as ISM, ASD Essential Eight ML3, SOC 2, and ISO/IEC 27001. The IATO container functions as the execution orchestration service, enforcing deterministic processing semantics and ensuring that all system behaviour is derived from declared inputs with no implicit execution paths.
+* Governance and Assurance container defines control taxonomy, system constraints, and execution invariants (policy and control authority layer).
+* Control Mapping container performs cross-framework alignment across ISM, ASD Essential Eight ML3, SOC 2, and ISO/IEC 27001 (normalisation layer).
+* Execution Orchestration container provides deterministic runtime coordination and enforces execution strictly from declared inputs (control execution plane).
 
-All execution is performed against **stubbed, version-controlled inputs**, including fixed test vectors, pre-staged datasets, and declared configuration constants. These inputs define each system instance and ensure that execution is reproducible and bounded. The system explicitly prohibits dynamic code execution and runtime interpretation mechanisms, including but not limited to the use of `eval()`, `exec()`, dynamic deserialisation into executable objects, or equivalent constructs. Environment variables are not used to influence control logic, execution paths, or model behaviour; all operational parameters are defined as immutable, module-level constants at load time. System behaviour is independent of **wall-clock time**; no control evaluation, model output, or decision path may depend on current timestamps, system time drift, or temporal side effects outside of explicitly declared and versioned inputs.
+Execution operates only on **stubbed, version-controlled inputs**, including fixed test vectors, datasets, and configuration constants. Each runtime instance is fully determined by these inputs.
 
-The system further enforces strict input handling guarantees. All ingested data is treated as untrusted and processed through typed, schema-bound interfaces. No input is executed, interpolated into command contexts, or passed to interpreters. Classes of vulnerabilities such as **SQL injection, command injection, deserialisation exploits, and arbitrary code execution** are structurally precluded by design through the absence of dynamic execution paths, strict type enforcement, and prohibition of runtime evaluation mechanisms.
+Dynamic execution is prohibited, including `eval()`, `exec()`, runtime deserialisation into executable constructs, and equivalent mechanisms. Environment variables do not influence control logic or execution paths. All configuration is resolved at initialisation from immutable constants. System behaviour is independent of **wall-clock time**, timestamps, and runtime temporal state.
 
-Validation containers, including control validation engines and behavioural analytics pipelines, consume these parameterised inputs and produce artefacts such as cryptographically verifiable evidence records, control trace matrices, and governance outputs. No container performs undeclared external calls, accesses runtime network resources, or mutates input state. All data flows are explicitly defined and unidirectional, and all outputs are written within bounded filesystem scopes.
+All inputs are processed through typed, schema-bound interfaces and treated strictly as data. This structurally eliminates **SQL injection, command injection, deserialisation exploitation, and arbitrary code execution** by removing runtime interpretation pathways.
 
-From a C4 perspective, the system enforces strict **container isolation, deterministic execution, and reproducibility guarantees**. Each container processes only declared inputs and produces outputs that are fully attributable to those inputs and the governing control mappings. Identical system instances, when executed with identical inputs and constants, produce identical outputs. This design ensures that the system is fully auditable, reproducible, and suitable for formal assurance processes, including independent assessment and regulatory submission.
+Validation and analytics containers generate structured outputs including control trace matrices, cryptographically verifiable evidence records, and governance artefacts. All outputs are bound to declared filesystem scopes. No external communication or state mutation is permitted.
 
-
-
+>All evidence artefacts are cryptographically bound using SHA-256 hashing, with integrity chaining supported through digital signatures (Ed25519), tamper-evident, verifiable provenance across all generated outputs.
 
 ---
 
-## Programmes
+## Execution Summary
+
+| Domain          | Constraint                      | Stub / Value Model                                          |
+| --------------- | ------------------------------- | ----------------------------------------------------------- |
+| Inputs          | Immutable per runtime instance  | `S₁ → Sₙ` (fixed test vectors, versioned datasets)          |
+| Configuration   | Static initialisation only      | `C₀` (module-level constants, frozen at load time)          |
+| Execution       | Deterministic, parameter-driven | `Σ(f(x)) → y` (no runtime branching outside declared logic) |
+| Control Flow    | Explicit declaration only       | `→` directed graph only (no implicit transitions)           |
+| Code Evaluation | Prohibited dynamic execution    | `✕ eval() / exec() / reflection / deserialisation`          |
+| Environment     | Non-influential state           | `ENV = ∅` (no environment variable dependency)              |
+| Time Model      | Non-temporal execution          | `T₀ ≠ runtime dependency` (no wall-clock coupling)          |
+| Data Handling   | Typed, schema-bound only        | `D(type-safe JSON / schema objects)`                        |
+| Outputs         | Structured and bounded          | `O₁ → Oₙ` (filesystem-scoped artefacts only)                |
+| Side Effects    | Disallowed                      | `Δstate = 0` outside declared outputs                       |
+
+---
+
+>The system is defined as a deterministic execution environment with strict separation of inputs, control mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime instances and eliminating variance introduced by race conditions, floating-point drift, and divergence.
+
+
+## Assurance Programmes
 
 ### SIRA — Stochastic-Invalidation-Risk-Architecture
 
