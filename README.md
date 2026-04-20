@@ -1,10 +1,9 @@
 
-**Name:** Dhruv Setty
-**Role:** Security Engineer (DevSecOps / AppSec)
+## Overview
 
-## System Overview
+The system is defined as an **assurance programme (system context model)** implemented as a bounded, parameterised security engineering platform for deterministic control validation and evidence production. 
 
-The system is defined as an **assurance programme (system context model)** implemented as a bounded, parameterised security engineering platform for deterministic control validation and evidence production. It is instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All behaviour is derived exclusively from these inputs.
+Instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All behaviour is derived exclusively from these inputs.
 
 The system is structured into three primary containers:
 
@@ -12,13 +11,13 @@ The system is structured into three primary containers:
 * Control Mapping container performs cross-framework alignment across ISM, ASD Essential Eight ML3, SOC 2, and ISO/IEC 27001 (normalisation layer).
 * Execution Orchestration container provides deterministic runtime coordination and enforces execution strictly from declared inputs (control execution plane).
 
-Execution operates only on **stubbed, version-controlled inputs**, including fixed test vectors, datasets, and configuration constants. Each runtime instance is fully determined by these inputs.
+Execution operates only on **stubbed, version-controlled inputs**, including fixed test vectors, datasets, and configuration constants. These inputs fully determine each runtime instance.
 
-Dynamic execution is prohibited, including `eval()`, `exec()`, runtime deserialisation into executable constructs, and equivalent mechanisms. Environment variables do not influence control logic or execution paths. All configuration is resolved at initialisation from immutable constants. System behaviour is independent of **wall-clock time**, timestamps, and runtime temporal state.
+* Dynamic execution is prohibited, including `eval()`, `exec()`, runtime deserialisation into executable constructs, and equivalent mechanisms. Environment variables do not influence control logic or execution paths. All configuration is resolved at initialisation from immutable constants. System behaviour is independent of **wall-clock time**, timestamps, and runtime temporal state.
 
-All inputs are processed through typed, schema-bound interfaces and treated strictly as data. This structurally eliminates **SQL injection, command injection, deserialisation exploitation, and arbitrary code execution** by removing runtime interpretation pathways.
+* Inputs are processed through typed, schema-bound interfaces and treated strictly as data. This structurally eliminates **SQL injection, command injection, deserialisation exploitation, and arbitrary code execution** by removing runtime interpretation pathways.
 
-Validation and analytics containers generate structured outputs including control trace matrices, cryptographically verifiable evidence records, and governance artefacts. All outputs are bound to declared filesystem scopes. No external communication or state mutation is permitted.
+* Validation and analytics containers generate structured outputs including control trace matrices, cryptographically verifiable evidence records, and governance artefacts. All outputs are bound to declared filesystem scopes. No external communication or state mutation is permitted.
 
 >All evidence artefacts are cryptographically bound using SHA-256 hashing, with integrity chaining supported through digital signatures (Ed25519), tamper-evident, verifiable provenance across all generated outputs.
 
@@ -53,7 +52,30 @@ Validation and analytics containers generate structured outputs including contro
 
 
 
->The system is defined as a deterministic execution environment with strict separation of inputs, control mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime instances and eliminating variance introduced by race conditions, floating-point drift, and divergence.
+>The system is defined as an exec env with strict separation of `inputs`, `ctrl` mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime `instances` and system `instantiations`. It guarantees invariant execution semantics by eliminating variance introduced by race conds, fp drift, and execution divergence across matching inst states and `state trans`. Each run follows a closed mapping of **inputs → control flow → orchestration → outputs**, ensuring deterministic equivalence under identical conditions.
+
+
+| Domain                | Constraint                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| System Function      | F : (S_in, C, O) → S_out                                                    |
+| Execution Rule       | S_out := F(S_in, C, O)                                                      |
+| Determinism          | ∀ x ∈ 𝒱, F(x) → S_out (single-valued mapping)                               |
+| State Invariance     | Var(S_out) = 0                                                              |
+| Context Scope        | 𝒱 := all valid execution contexts                                           |
+| Control Model        | Strictly parameter-driven mapping (no implicit control injection)          |
+| State Model          | Closed state transition system over S_in → S_out                            |
+| Orchestration Layer  | Explicitly declared transformation pipeline only                            |
+| Output Semantics     | Pure functional emission from resolved state                                |
+| System Property      | ∀ runs: identical (S_in, C, O) ⇒ identical S_out                            |
+
+---
+
+### Annotation 
+
+>This formalism defines the system as a deterministic state-transition function `(F)`, where outputs are fully determined by the tuple of input state `(S_in)`, control mapping `(C)`, and orchestration layer `(O)`. The invariant constraint enforces that across all valid execution contexts (𝒱), repeated evaluation of identical inputs yields identical output states, eliminating stochasticity and runtime divergence.
+
+
+
 
 ## Assurance Programmes
 
@@ -68,7 +90,7 @@ flowchart LR
     S3 --> S4[Remediation Obligation Set]
 ```
 
-- **Linked repositories:**
+
   - [`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
 - **Control frameworks referenced:**
   - ISM Application Control
@@ -87,7 +109,7 @@ flowchart LR
     I3 --> I4[Append-only Session Evidence]
 ```
 
-- **Linked repositories:**
+
   - [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 - **Control frameworks referenced:**
   - ISM Application Control
