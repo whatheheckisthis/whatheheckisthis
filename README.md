@@ -16,7 +16,7 @@ flowchart TD
 
 ---
 
-## SYSTEM LANDSCAPE
+## System Overview
 
 ```mermaid
 flowchart TD
@@ -37,7 +37,7 @@ flowchart TD
 
 ---
 
-## PROGRAMME LAYER (SIRA + IĀTŌ)
+## Programmes
 
 ### SIRA — Stochastic-Invalidation-Risk-Architecture
 
@@ -79,7 +79,7 @@ flowchart LR
 
 ---
 
-## VALIDATION ARTEFACTS LAYER
+## Validation Artefacts 
 
 ### CVE Validation Subsystem
 
@@ -102,7 +102,7 @@ flowchart LR
 
 ---
 
-## PRACTICE FRAMEWORK (GOVERNANCE MAPPING TABLE)
+## Practice Framework
 
 | Registry Item | Source | Governance Mapping |
 |---|---|---|
@@ -111,7 +111,7 @@ flowchart LR
 
 ---
 
-## DELIVERY MODEL
+## Delivery Model 
 
 ```mermaid
 flowchart LR
@@ -120,7 +120,7 @@ flowchart LR
 
 ---
 
-## CONTROLS TAXONOMY (VISUAL MATRIX)
+## Controls Taxonomy 
 
 ```mermaid
 classDiagram
@@ -155,7 +155,7 @@ classDiagram
 
 ---
 
-## COMMERCIAL MODEL (SPEC REGISTRY)
+## Commercial Model
 
 | Parameter | Specification |
 |---|---|
@@ -166,8 +166,6 @@ classDiagram
 | Engagement channels | Specialist recruiters · direct referrals · GitHub |
 
 ---
-
-## SYSTEM TAGS AND CONTACT
 
 `E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220`
 
