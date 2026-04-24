@@ -133,12 +133,6 @@ flowchart LR
 - [`CVE-2021-22986`](https://github.com/whatheheckisthis/CVE-2021-22986)
 - [`Canonical-Extension-CVE-2021-22986`](https://github.com/whatheheckisthis/Canonical-Extension-CVE-2021-22986)
 
-```mermaid
-flowchart LR
-    SIRA[SIRA] --> IATO[IĀTŌ]
-    IATO --> CVE[CVE Validation Systems]
-    CVE --> EVIDENCE[Validation Artefact Evidence]
-```
 
 ---
 
@@ -151,14 +145,6 @@ flowchart LR
 
 ---
 
-## Delivery Model 
-
-```mermaid
-flowchart LR
-    D1[Discovery] --> D2[Control Mapping] --> D3[Gap Register] --> D4[Implementation] --> D5[Evidence] --> D6[Handover]
-```
-
----
 
 ## Controls Taxonomy 
 
