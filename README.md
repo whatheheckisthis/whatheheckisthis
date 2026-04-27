@@ -24,51 +24,66 @@ Execution operates only on **stubbed, version-controlled inputs**, including fix
 
 ## Execution Summary
 
-| Domain          | Constraint                      | Stub / Value Model                                          |
-| --------------- | ------------------------------- | ----------------------------------------------------------- |
-| Inputs          | Immutable per runtime instance  | `S₁ → Sₙ` (fixed test vectors, versioned datasets)          |
-| Configuration   | Static initialisation only      | `C₀` (module-level constants, frozen at load time)          |
-| Execution       | Deterministic, parameter-driven | `Σ(f(x)) → y` (no runtime branching outside declared logic) |
-| Control Flow    | Explicit declaration only       | `→` directed graph only (no implicit transitions)           |
-| Code Evaluation | Prohibited dynamic execution    | `✕ eval() / exec() / reflection / deserialisation`          |
-| Environment     | Non-influential state           | `ENV = ∅` (no environment variable dependency)              |
-| Time Model      | Non-temporal execution          | `T₀ ≠ runtime dependency` (no wall-clock coupling)          |
-| Data Handling   | Typed, schema-bound only        | `D(type-safe JSON / schema objects)`                        |
-| Outputs         | Structured and bounded          | `O₁ → Oₙ` (filesystem-scoped artefacts only)                |
-| Side Effects    | Disallowed                      | `Δstate = 0` outside declared outputs                       |
-
----
-
-| Domain            | Constraint                                                       |
-| ----------------- | ---------------------------------------------------------------- |
-| Input Model       | ∀ inputs ∈ {stubbed, version-controlled, immutable per instance} |
-| Execution         | Deterministic, parameter-driven only                             |
-| Control Flow      | Strict linear sequence (01 → 05)                                 |
-| Environment       | ENV := ∅ (no environment-variable influence permitted)           |
-| Time Dependency   | Δt = 0 (no wall-clock coupling)                                  |
-| Dynamic Execution | ⊘ eval(), ⊘ exec(), ⊘ reflection, ⊘ runtime deserialisation      |
-| Side Effects      | Bounded strictly to declared output layer                        |
-| Reproducibility   | ∀ runs: identical inputs ⇒ identical outputs                     |
 
 
 
 >The system is defined as an exec env with strict separation of `inputs`, `ctrl` mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime `instances` and system `instantiations`. It guarantees invariant execution semantics by eliminating variance introduced by race conds, fp drift, and execution divergence across matching inst states and `state trans`. Each run follows a closed mapping of **inputs → control flow → orchestration → outputs**, ensuring deterministic equivalence under identical conditions.
 
 
-| Domain                | Constraint                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| System Function      | F : (S_in, C, O) → S_out                                                    |
-| Execution Rule       | S_out := F(S_in, C, O)                                                      |
-| Determinism          | ∀ x ∈ 𝒱, F(x) → S_out (single-valued mapping)                               |
-| State Invariance     | Var(S_out) = 0                                                              |
-| Context Scope        | 𝒱 := all valid execution contexts                                           |
-| Control Model        | Strictly parameter-driven mapping (no implicit control injection)          |
-| State Model          | Closed state transition system over S_in → S_out                            |
-| Orchestration Layer  | Explicitly declared transformation pipeline only                            |
-| Output Semantics     | Pure functional emission from resolved state                                |
-| System Property      | ∀ runs: identical (S_in, C, O) ⇒ identical S_out                            |
+```mermaid
+graph TD
+    subgraph External_Actors [External stakeholders]
+        A[Security engineering team]
+        B[GRC & audit partners]
+    end
 
+    subgraph System_Boundary [Assurance platform boundary]
+        C[[Deterministic execution engine]]
+    end
+
+    subgraph Data_Artifacts [Input / output scopes]
+        D[(Versioned input state\nGit SHA · OCI digest)]
+        E[(Cryptographic evidence store\nSHA-256 · Ed25519 · Rekor)]
+    end
+
+    A -->|"Defines C & O\n(schema-validated artefacts)"| C
+    D -->|"S_in injection\n(digest-pinned ingress)"| C
+    C -->|"Deterministic mapping\nF(S_in, C, O)"| E
+    E -->|"Signed evidence\n(read-only · no write-back)"| B
+```
 ---
+
+```mermaid
+flowchart TD
+    subgraph Schema_Compilation [Schema build layer]
+        SC1[schemas/s-in.schema.json]
+        SC2[schemas/s-out.schema.json]
+        SC3[schemas/pac-policy.schema.json]
+    end
+
+    subgraph Execution_Container [Execution orchestration]
+        direction TB
+        C1[Input schema validator\norchestration/runner.js]
+        C2[Pure logic processor\norchestration/runner.js]
+        C3[Integrity chaining module\norchestration/runner.js]
+    end
+
+    SC1 -.->|"Compiled contract\n(frozen at build time)"| C1
+    SC2 -.->|"Output contract\n(verified post-execution)"| C3
+    SC3 -.->|"Policy contract\n(enforced by OPA)"| C2
+
+    Input(["S_in — immutable\nschemas/s-in.schema.json"]) --> C1
+    C1 -->|"Type-safe frozen object\n(halt on any violation)"| C2
+    C2 -->|"Raw state result\n(sandbox: no syscalls · no clock)"| C3
+    C3 --> Output(["S_out — SHA-256 signed\nevidence/bundle-manifest.json"])
+
+    note1{{"Δt = 0\nno clock access"}}
+    note1 -.-> C2
+    note2{{"ENV := ∅\nno env reads"}}
+    note2 -.-> C2
+    note3{{"Schema-derived\nbehaviour only"}}
+    note3 -.-> C1
+```
 
 ### Annotation 
 
