@@ -1,33 +1,85 @@
 
 ## Overview
 
-The system is defined as an **assurance programme (system context model)** implemented as a bounded, parameterised security engineering platform for deterministic control validation and evidence production. 
+The system is defined within the **IĀTŌ (Intent-to-Auditable-Trust-Object) Assurance Programme**, implemented as a bounded, parameterised security-engineering platform for deterministic control validation and evidence production.
 
-Instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All behaviour is derived exclusively from these inputs.
+It is instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All system behaviour is derived exclusively from these inputs.
+
+
+## Architecture
 
 The system is structured into three primary containers:
 
-* Governance and Assurance container defines control taxonomy, system constraints, and execution invariants (policy and control authority layer).
-* Control Mapping container performs cross-framework alignment across ISM, ASD Essential Eight ML3, SOC 2, and ISO/IEC 27001 (normalisation layer).
-* Execution Orchestration container provides deterministic runtime coordination and enforces execution strictly from declared inputs (control execution plane).
-
-Execution operates only on **stubbed, version-controlled inputs**, including fixed test vectors, datasets, and configuration constants. These inputs fully determine each runtime instance.
-
-* Dynamic execution is prohibited, including `eval()`, `exec()`, runtime deserialisation into executable constructs, and equivalent mechanisms. Environment variables do not influence control logic or execution paths. All configuration is resolved at initialisation from immutable constants. System behaviour is independent of **wall-clock time**, timestamps, and runtime temporal state.
-
-* Inputs are processed through typed, schema-bound interfaces and treated strictly as data. This structurally eliminates **SQL injection, command injection, deserialisation exploitation, and arbitrary code execution** by removing runtime interpretation pathways.
-
-* Validation and analytics containers generate structured outputs including control trace matrices, cryptographically verifiable evidence records, and governance artefacts. All outputs are bound to declared filesystem scopes. No external communication or state mutation is permitted.
-
->All evidence artefacts are cryptographically bound using SHA-256 hashing, with integrity chaining supported through digital signatures (Ed25519), tamper-evident, verifiable provenance across all generated outputs.
+Defines control taxonomy, system constraints, and execution invariants.  
+This layer acts as the policy and control authority for all system behaviour.
 
 
-## Execution Summary
+Performs cross-framework normalisation and alignment across:
+- ISM (Australian Information Security Manual)
+- ASD Essential Eight (ML3)
+- SOC 2
+- ISO/IEC 27001  
+
+Ensures all controls are consistently interpreted and mapped across frameworks.
+
+- Provides deterministic runtime coordination and enforces execution strictly from declared inputs.  
+- This is the control execution plane of the system.
 
 
 
+## Execution Model
 
->The system is defined as an exec env with strict separation of `inputs`, `ctrl` mapping, orchestration, and outputs, enforcing reproducible behaviour across equivalent runtime `instances` and system `instantiations`. It guarantees invariant execution semantics by eliminating variance introduced by race conds, fp drift, and execution divergence across matching inst states and `state trans`. Each run follows a closed mapping of **inputs → control flow → orchestration → outputs**, ensuring deterministic equivalence under identical conditions.
+Execution operates only on **stubbed, version-controlled inputs**, including fixed test vectors, datasets, and configuration constants.
+
+These inputs fully determine each runtime instance. No external or implicit state is permitted to influence execution outcomes.
+
+Dynamic execution is explicitly prohibited, including:
+- `eval()`
+- `exec()`
+- runtime deserialisation into executable constructs
+- equivalent runtime code generation or interpretation mechanisms
+
+Environment variables do not influence control logic or execution paths.  
+All configuration is resolved at initialisation from immutable constants.  
+System behaviour is independent of **wall-clock time, timestamps, and runtime temporal state**.
+
+All inputs are processed through typed, schema-bound interfaces and treated strictly as data.
+
+This design structurally eliminates entire classes of runtime execution risk, including:
+
+- SQL injection
+- command injection
+- deserialisation exploitation
+- arbitrary code execution
+
+This is achieved by removing runtime interpretation pathways entirely from the execution model.
+
+
+
+## Validation Model
+
+Validation and analytics containers generate structured outputs, including:
+- control trace matrices
+- cryptographically verifiable evidence records
+- governance artefacts
+
+All outputs are bound to declared filesystem scopes.  
+No external communication or state mutation is permitted.
+
+
+
+## Evidence Integrity Model
+
+All evidence artefacts are cryptographically bound using **SHA-256 hashing**, with integrity chaining supported through **Ed25519 digital signatures**.
+
+This provides:
+- tamper-evident evidence generation
+- verifiable provenance across all outputs
+- end-to-end integrity tracking across system execution
+
+
+## Execution Summary 
+>The system enforces deterministic, boundary-constrained execution over versioned inputs to produce cryptographically verifiable evidence artefacts with no external state mutation or runtime variability beyond declared control mappings..
 
 
 ```mermaid
@@ -51,6 +103,8 @@ graph TD
     C -->|"Deterministic mapping\nF(S_in, C, O)"| E
     E -->|"Signed evidence\n(read-only · no write-back)"| B
 ```
+
+
 ---
 
 ```mermaid
@@ -85,26 +139,62 @@ flowchart TD
     note3 -.-> C1
 ```
 
+---
+
+```mermaid
+flowchart TD
+
+    subgraph Constraints_Model [Execution Constraints Model]
+        A["Execution Constraints"]
+        B["Schema Constraint\nDefines validation boundaries over all inputs"]
+        C["Environment Constraint\nENV = ∅ (no external state dependency)"]
+        D["Temporal Constraint\nΔt = 0 (no time dependency)"]
+        E["Determinism Constraint (Δ)\nEnforces deterministic orchestration semantics"]
+    end
+
+    subgraph Execution_Pipeline [Deterministic Execution Pipeline]
+        F["Validated Execution State\nType-safe, schema-bound frozen object"]
+        G["Deterministic Output Space\nReproducible, input-derived outputs only"]
+    end
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+
+    B -->|"Schema-derived validation"| F
+    C -->|"Environment isolation enforced"| F
+    D -->|"Temporal invariance enforced"| F
+    E -->|"Deterministic orchestration"| F
+
+    F -->|"Pure execution mapping"| G
+
+    note1{{"Δt = 0\nno clock access"}}
+    note2{{"ENV = ∅\nno environment reads"}}
+    note3{{"Schema-derived behaviour only"}}
+
+    note1 -.-> D
+    note2 -.-> C
+    note3 -.-> B
+
+```
 ### Annotation 
+>This system formalises execution as a deterministic state-transition function **∀ x ∈ 𝒱**, where outputs are fully derived from immutable input state, schema-bound control definitions, and orchestration rules.
+Under the invariant set 𝒱, identical inputs and control mappings produce identical output states, ensuring zero stochastic variance, no runtime divergence, and no external state dependency.
 
->This formalism defines the system as a deterministic state-transition function `(F)`, where outputs are fully determined by the tuple of input state `(S_in)`, control mapping `(C)`, and orchestration layer `(O)`. The invariant constraint enforces that across all valid execution contexts (𝒱), repeated evaluation of identical inputs yields identical output states, eliminating stochasticity and runtime divergence.
+Execution is constrained by:
+- schema-derived validation boundaries
+- environment and time independence (ENV = ∅, Δt = 0)
+- deterministic processor semantics enforced at orchestration level
 
-
+All outputs are bound as cryptographically signed evidence artefacts, preserving integrity and traceability across execution instances.
 
 
 ## Assurance Programmes
 
 ### SIRA — Stochastic-Invalidation-Risk-Architecture
 
-- **Purpose:** Maps risk governance controls to auditable validation boundaries.
-
-```mermaid
-flowchart LR
-    S1[Control Crosswalk Engine] --> S2[Risk Governance Artefacts]
-    S2 --> S3[Evidence Gap Register]
-    S3 --> S4[Remediation Obligation Set]
-```
-
+- **Purpose:** MRM (Model Risk Management) artefact is a downstream construct for representing and evidencing model risk controls. 
 
   - [`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
 - **Control frameworks referenced:**
@@ -117,14 +207,6 @@ flowchart LR
 
 - **Purpose:** Enforces privileged-access elimination and auditable container execution semantics.
 
-```mermaid
-flowchart LR
-    I1[Rootless Isolation Control] --> I2[Enumerated Command Harness]
-    I2 --> I3[MCP Audit Record Stream]
-    I3 --> I4[Append-only Session Evidence]
-```
-
-
   - [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
 - **Control frameworks referenced:**
   - ISM Application Control
@@ -132,7 +214,7 @@ flowchart LR
   - SOC 2 CC7.2
   - ISO/IEC 27001
 
----
+
 
 ## Validation Artefacts 
 
@@ -149,7 +231,7 @@ flowchart LR
 - [`Canonical-Extension-CVE-2021-22986`](https://github.com/whatheheckisthis/Canonical-Extension-CVE-2021-22986)
 
 
----
+
 
 ## Practice Framework
 
@@ -158,7 +240,7 @@ flowchart LR
 | ETHOS.md | [`docs/ETHOS.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/ETHOS.md) | Architecture philosophy and stack governance |
 | DELIVERY.md | [`docs/DELIVERY.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/DELIVERY.md) | Engagement execution model and GRC control mapping |
 
----
+
 
 
 ## Controls Taxonomy 
