@@ -1,10 +1,7 @@
 
 ## Overview
 
-The system is defined within the **IĀTŌ (Intent-to-Auditable-Trust-Object) Assurance Programme**, implemented as a bounded, parameterised security-engineering platform for deterministic control validation and evidence production.
-
-It is instantiated as a runtime execution of declared configuration, constants, and stubbed inputs. All system behaviour is derived exclusively from these inputs.
-
+The system is defined within the **IĀTŌ (Intent-to-Auditable-Trust-Object) Assurance Programme**, Instantiated as a runtime execution within a bounded, parameterised security engineering platform, serving as an environment to enable deterministic control validation and the production of verifiable evidence.
 
 ## Architecture
 
@@ -68,7 +65,7 @@ No external communication or state mutation is permitted.
 
 
 
-## Evidence Integrity Model
+## Evidence Integrity 
 
 All evidence artefacts are cryptographically bound using **SHA-256 hashing**, with integrity chaining supported through **Ed25519 digital signatures**.
 
@@ -104,90 +101,8 @@ graph TD
     E -->|"Signed evidence\n(read-only · no write-back)"| B
 ```
 
-
----
-
-```mermaid
-flowchart TD
-    subgraph Schema_Compilation [Schema build layer]
-        SC1[schemas/s-in.schema.json]
-        SC2[schemas/s-out.schema.json]
-        SC3[schemas/pac-policy.schema.json]
-    end
-
-    subgraph Execution_Container [Execution orchestration]
-        direction TB
-        C1[Input schema validator\norchestration/runner.js]
-        C2[Pure logic processor\norchestration/runner.js]
-        C3[Integrity chaining module\norchestration/runner.js]
-    end
-
-    SC1 -.->|"Compiled contract\n(frozen at build time)"| C1
-    SC2 -.->|"Output contract\n(verified post-execution)"| C3
-    SC3 -.->|"Policy contract\n(enforced by OPA)"| C2
-
-    Input(["S_in — immutable\nschemas/s-in.schema.json"]) --> C1
-    C1 -->|"Type-safe frozen object\n(halt on any violation)"| C2
-    C2 -->|"Raw state result\n(sandbox: no syscalls · no clock)"| C3
-    C3 --> Output(["S_out — SHA-256 signed\nevidence/bundle-manifest.json"])
-
-    note1{{"Δt = 0\nno clock access"}}
-    note1 -.-> C2
-    note2{{"ENV := ∅\nno env reads"}}
-    note2 -.-> C2
-    note3{{"Schema-derived\nbehaviour only"}}
-    note3 -.-> C1
-```
-
----
-
-```mermaid
-flowchart TD
-
-    subgraph Constraints_Model [Execution Constraints Model]
-        A["Execution Constraints"]
-        B["Schema Constraint\nDefines validation boundaries over all inputs"]
-        C["Environment Constraint\nENV = ∅ (no external state dependency)"]
-        D["Temporal Constraint\nΔt = 0 (no time dependency)"]
-        E["Determinism Constraint (Δ)\nEnforces deterministic orchestration semantics"]
-    end
-
-    subgraph Execution_Pipeline [Deterministic Execution Pipeline]
-        F["Validated Execution State\nType-safe, schema-bound frozen object"]
-        G["Deterministic Output Space\nReproducible, input-derived outputs only"]
-    end
-
-    A --> B
-    A --> C
-    A --> D
-    A --> E
-
-    B -->|"Schema-derived validation"| F
-    C -->|"Environment isolation enforced"| F
-    D -->|"Temporal invariance enforced"| F
-    E -->|"Deterministic orchestration"| F
-
-    F -->|"Pure execution mapping"| G
-
-    note1{{"Δt = 0\nno clock access"}}
-    note2{{"ENV = ∅\nno environment reads"}}
-    note3{{"Schema-derived behaviour only"}}
-
-    note1 -.-> D
-    note2 -.-> C
-    note3 -.-> B
-
-```
-### Annotation 
 >This system formalises execution as a deterministic state-transition function **∀ x ∈ 𝒱**, where outputs are fully derived from immutable input state, schema-bound control definitions, and orchestration rules.
 Under the invariant set 𝒱, identical inputs and control mappings produce identical output states, ensuring zero stochastic variance, no runtime divergence, and no external state dependency.
-
-Execution is constrained by:
-- schema-derived validation boundaries
-- environment and time independence (ENV = ∅, Δt = 0)
-- deterministic processor semantics enforced at orchestration level
-
-All outputs are bound as cryptographically signed evidence artefacts, preserving integrity and traceability across execution instances.
 
 
 ## Assurance Programmes
