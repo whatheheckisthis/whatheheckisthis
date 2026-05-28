@@ -221,7 +221,7 @@ classDiagram
 
 ---
 
-`E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220`
+`NZISM` · `E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220`
 
 **Engagement enquiries:** Direct recruiter engagement preferred.
 
