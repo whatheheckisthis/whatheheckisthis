@@ -125,10 +125,11 @@ This model eliminates duplicate evidence production across frameworks and provid
 
 ### SIRA — Stochastic-Invalidation-Risk-Architecture
 
-- **Purpose:** MRM (Model Risk Management) artefact is a downstream construct for representing and evidencing model risk controls. 
+**Purpose:** MRM (Model Risk Management) artefact is a downstream construct for representing and evidencing model risk controls. 
 
-  - [`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
-- **Control frameworks referenced:**
+[`Stochastic-Invalidation-Risk-Architecture`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture)
+
+**Control frameworks referenced:**
   - ISM Application Control
   - ASD Essential Eight ML3
   - SOC 2 CC7.2
@@ -136,10 +137,11 @@ This model eliminates duplicate evidence production across frameworks and provid
 
 ### IĀTŌ — Intent-to-Auditable-Trust-Object
 
-- **Purpose:** Enforces privileged-access elimination and auditable container execution semantics.
+**Purpose:** Enforces privileged-access elimination and auditable container execution semantics.
 
-  - [`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
-- **Control frameworks referenced:**
+[`Intent-to-Auditable-Trust-Object-Index`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)
+
+**Control frameworks referenced:**
   - ISM Application Control
   - ASD Essential Eight ML3
   - SOC 2 CC7.2
@@ -153,7 +155,7 @@ This model eliminates duplicate evidence production across frameworks and provid
 
 ```mermaid
 flowchart LR
-    VA[Validation Artefacts Layer]
+    VA[Validation Artefacts]
     VA --> CVE1[CVE-2021-22986\ncontrol validation function]
     VA --> CVE2[Canonical-Extension-CVE-2021-22986\ncontrol validation function]
 ```
@@ -170,8 +172,6 @@ flowchart LR
 |---|---|---|
 | ETHOS.md | [`docs/ETHOS.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/ETHOS.md) | Architecture philosophy and stack governance |
 | DELIVERY.md | [`docs/DELIVERY.md`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture/blob/main/docs/DELIVERY.md) | Engagement execution model and GRC control mapping |
-
-
 
 
 ## Controls Taxonomy 
@@ -213,10 +213,10 @@ classDiagram
 
 | Parameter | Specification |
 |---|---|
-| Day rate | Market-aligned contractor rate (DevSecOps / GRC uplift scope) |
-| Engagement model | Fixed-term DevSecOps uplift (typically 100–120 days) |
-| Delivery cadence | Capacity-based engagements (~2 per annum) |
-| Billing terms | Milestone-based or fortnightly · Net 14 |
+| Day rate | Market-aligned contractor rate |
+| Engagement model | Fixed-term (100–120 days) |
+| Delivery cadence | Capacity based engagements (~2 per annum) |
+| Billing terms | Milestone or fortnightly · Net 14 |
 | Engagement channels | Specialist recruiters · direct referrals · GitHub |
 
 ---
