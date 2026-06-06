@@ -103,29 +103,42 @@ CPS 220 is treated as a risk governance overlay, not a technical control standar
 
 ## Crosswalk Model
 
-All framework obligations are managed through a unified crosswalk layer. Controls are not maintained as per-framework silos — each control is a single enumerated entry in the IĀTŌ controls index, tagged with the framework identifiers it satisfies.
+Every assurance obligation is enumerated once in the `IĀTŌ` controls index, carrying a defined assertion, a specified evidence artefact class, and a crosswalk to every framework identifier it satisfies. 
 
-```
+- Evidence is produced once and applies to all framework tags the entry carries
+- Single privileged access control entry satisfies obligations 
+
+```yaml
 control_id: IATO-AC-012
 title:      Privileged Access — Standing Access Elimination
-assertion:  no standing privileged accounts outside defined break-glass scope
-evidence:   IAM role inventory extract, last-reviewed timestamp, exception register
+assertion:  no standing privileged accounts outside defined break glass scope
+evidence:   IAM role inventory extract, last reviewed timestamp, exception register
 frameworks:
-  - NZISM:       AC-7
-  - ISM:         ISM-1175, ISM-1507
-  - E8 ML3:      Restrict Administrative Privileges — ML3
-  - DISP:        ICT-04
+  - NZISM:        AC-7
+  - ISM:          ISM-1175, ISM-1507
+  - E8 ML3:       Restrict Administrative Privileges — ML3
+  - DISP:         ICT-04
   - APRA CPS 220: ORM-3.2 (operational risk control)
+  - SOC 2:        CC6.3 (logical access controls)
+  - ISO 27001:    A.9.2.3 (management of privileged access rights)
 ```
 
-This model eliminates duplicate evidence production across frameworks and provides a single auditable evidence trail regardless of which framework is the assurance target for a given engagement.
+| Field | Value |
+|---|---|
+| Assertion | No standing privileged accounts outside break-glass scope |
+| Evidence artefact | IAM role inventory extract, last-reviewed timestamp, exception register |
+| Frameworks satisfied | NZISM · ISM · E8 ML3 · DISP · APRA CPS 220 · SOC 2 · ISO 27001 |
+| Evidence production events | 1 |
+| Audit trails produced | 1 — committed to append-only ledger, consumable by any framework assessor |
 
+---
 
 ## Assurance Programmes
+
 | Programme | Purpose | Control Frameworks |
-|-----------|---------|-------------------|
-| [`SIRA`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture) | MRM (Model Risk Management) artefact is a downstream construct for representing and evidencing model risk controls. | ISM Application Control · ASD Essential Eight ML3 · SOC 2 CC7.2 · ISO/IEC 27001 |
-| [`IATO`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index)| Enforces privileged-access elimination and auditable container . | ISM Application Control · ASD Essential Eight ML3 · SOC 2 CC7.2 · ISO/IEC 27001 |
+|---|---|---|
+| [`SIRA`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture) | Quantitative risk assurance engine. Converts immutable control telemetry into quantified residual exposure for board and prudential reviewer consumption. | ISM · ASD E8 ML3 · APRA CPS 220 · SOC 2 · ISO/IEC 27001 |
+| [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) | Closed control index. Maps all framework obligations to enumerated, assertion, evidence committed assurance targets across a unified crosswalk. | ISM · ASD E8 ML3 · APRA CPS 220 · SOC 2 · ISO/IEC 27001 |
 
 
 
