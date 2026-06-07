@@ -1,3 +1,15 @@
+# Hello, I'm Dhruv, 
+
+I deliver fixed-term security and compliance uplift projects for Australian and New Zealand government and regulated enterprises. 
+
+Specialising in evidence-bound, machine-verifiable control implementation across 
+
+`NZISM` · `ISM` · `Essential Eight Maturity Level 3` 
+
+All deliverables are produced as auditable, append-only artefacts.
+
+Recent portfolio work includes the [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7) the latest iteration of the [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) framework. It provides a formal verification model for modern computing environments including hardware platforms, virtualised systems, and confidential computing workloads, enabling auditable validation of low level correctness.
+
 
 ## Overview
 
@@ -10,7 +22,7 @@
 | Evidence model | Append-only, hash-chained, timestamped |
 | Policy instrument | Policy as Code (OPA / Conftest / Azure Policy / AWS IAM) |
 | Automation posture | Closed-loop: control assertion → evidence emission → ledger commit |
-| Frameworks | NZISM, E8 ML3, ISM, IRAP, DISP, APRA CPS 220 |
+| Frameworks | `NZISM` · `ISM` · `Essential Eight Maturity Level 3`  |
 | Primary markets | Australian and New Zealand government and enterprise |
 
 
@@ -49,7 +61,7 @@ All eight strategies are asserted at ML3 against the ASD evidence requirements. 
 
 ### ISM — Australian Government Information Security Manual
 
-ACSC published baseline for Australian government systems. Treated as the primary control reference for all AU-market engagements. ISM controls are mapped into the IĀTŌ controls index as enumerated, addressable assurance targets.
+ACSC published baseline for Australian government systems. Treated as the primary control reference for all AU-market engagements. ISM controls are mapped into the `IĀTŌ` controls index as enumerated, addressable assurance targets.
 
 ISM revision currency is maintained. Controls are not treated as static checklists — each control is modelled as an observable state with a defined assertion mechanism and evidence artefact class.
 
@@ -77,7 +89,7 @@ DISP obligations covered:
 ```
 Personnel security          — clearance currency, insider threat controls
 Physical security           — asset classification, perimeter controls, clean desk
-ICT security                — ISM-aligned, network segregation, removable media
+ICT security                — ISM, network segregation, removable media
 Governance                  — security plan, incident reporting, annual review cadence
 ```
 
@@ -131,6 +143,12 @@ frameworks:
 | Evidence production events | 1 |
 | Audit trails produced | 1 — committed to append-only ledger, consumable by any framework assessor |
 
+## Credentials
+
+- Azure Platform Security (AZ-500 — previously held)
+- OffSec Defensive Analyst (OSDA — previously held)
+- Microsoft Defender suite, Microsoft Sentinel, Entra ID / Conditional Access hardening, Azure Policy, RBAC, and landing zone security
+
 ---
 
 ## Assurance Programmes
@@ -176,7 +194,7 @@ classDiagram
 | Governance | CTRL-GOV-01 · CTRL-GOV-02 · CTRL-GOV-03 | ISM · SOC 2 · ASD Essential Eight ML3 |
 
 
----
+
 
 ## Commercial Model
 
@@ -188,7 +206,7 @@ classDiagram
 | Billing terms | Milestone or fortnightly · Net 14 |
 | Engagement channels | Specialist recruiters · direct referrals · GitHub |
 
-`NZISM` · `E8 ML3` · `ISM` · `IRAP` · `DISP` · `APRA CPS 220`
+`NZISM` · `ISM` · `Essential Eight Maturity Level 3` · `IRAP`  
 
 **Engagement enquiries:** Direct recruiter engagement preferred.
 
