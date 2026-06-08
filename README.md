@@ -1,10 +1,10 @@
 # Hello, I'm Dhruv, 
 
-Security and compliance uplift contractor engaged on fixed-term programs across Australian and New Zealand government and regulated enterprises, with a focus on evidence bound, machine verifiable control implementation and assurance.
+Security and compliance uplift contractor engaged on fixed-term programs across Australian and New Zealand government and regulated enterprises, with a focus on evidence-bound, machine-verifiable control implementation.
 
 `NZISM` · `ISM` · `Essential Eight Maturity Level 3` 
 
-Recent portfolio work includes the [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7) the latest iteration of the [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) framework. It provides a formal verification model for modern computing environments including hardware platforms, virtualised systems, and confidential computing workloads, enabling auditable validation of low level correctness.
+Recent portfolio work includes the [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7) the latest iteration of the [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) framework. It provides a formal verification model for modern computing environments including hardware platforms, virtualised systems, and confidential computing workloads, enabling auditable validation of low-level correctness.
 
 
 ## Overview
