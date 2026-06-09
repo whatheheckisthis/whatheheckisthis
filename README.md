@@ -89,7 +89,7 @@ ICT security                — ISM, network segregation, removable media
 Governance                  — security plan, incident reporting, annual review cadence
 ```
 
-Evidence structures for DISP are consistent with those produced for ISM/IRAP — same ledger, same schema, different control crosswalk layer.
+Evidence structures for DISP are consistent with those produced for ISM/IRAP — same ledger, same schema, different control crosswalk.
 
 
 
