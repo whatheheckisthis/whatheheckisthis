@@ -2,7 +2,8 @@
 
 Security and compliance uplift contractor engaged on fixed-term programs across Australian and New Zealand government and regulated enterprises, with a focus on evidence-bound, machine-verifiable control implementation.
 
-`NZISM` · `ISM` · `Essential Eight Maturity Level 3` 
+`NZISM` · `ISM` · `Essential Eight Maturity Level 3` · `IRAP`  
+ 
 
 Recent portfolio work includes the [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7) the latest iteration of the [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) framework. It provides a formal verification model for modern computing environments including hardware platforms, virtualised systems, and confidential computing workloads, enabling auditable validation of low-level correctness.
 
@@ -18,7 +19,7 @@ Recent portfolio work includes the [`IĀTŌ-v7`](https://github.com/whatheheckis
 | Evidence model | Append-only, hash-chained, timestamped |
 | Policy instrument | Policy as Code (OPA / Conftest / Azure Policy / AWS IAM) |
 | Automation posture | Closed-loop: control assertion → evidence emission → ledger commit |
-| Frameworks | `NZISM` · `ISM` · `Essential Eight Maturity Level 3`  |
+| Frameworks | `NZISM` · `ISM` · `Essential Eight Maturity Level 3` · `IRAP`|
 | Primary markets | Australian and New Zealand government and enterprise |
 
 
@@ -92,23 +93,6 @@ Governance                  — security plan, incident reporting, annual review
 Evidence structures for DISP are consistent with those produced for ISM/IRAP — same ledger, same schema, different control crosswalk.
 
 
-
-### APRA CPS 220 — Risk Management
-
-Australian Prudential Regulation Authority standard for operational risk management in APRA-regulated entities (ADIs, insurers, RSE licensees). Applied to financial sector engagements.
-
-CPS 220 alignment covers:
-
-- operational risk framework adequacy — control surface modelling via SIRA
-- material risk identification and treatment — stochastic risk register, quantified residual exposure
-- business continuity and recovery — RTO/RPO control assertions, tested restoration evidence
-- third-party and supply chain risk — vendor control attestation, dependency mapping
-- board and senior management accountability structures — governance artefacts structured for prudential reviewer consumption
-
-CPS 220 is treated as a risk governance overlay, not a technical control standard. SIRA outputs are the primary instrument for CPS 220 risk quantification deliverables.
-
-
-
 ## Crosswalk Model
 
 Every assurance obligation is enumerated once in the `IĀTŌ` controls index, carrying a defined assertion, a specified evidence artefact class, and a crosswalk to every framework identifier it satisfies. 
@@ -135,9 +119,9 @@ frameworks:
 |---|---|
 | Assertion | No standing privileged accounts outside break-glass scope |
 | Evidence artefact | IAM role inventory extract, last-reviewed timestamp, exception register |
-| Frameworks satisfied | NZISM · ISM · E8 ML3 · DISP · APRA CPS 220 · SOC 2 · ISO 27001 |
-| Evidence production events | 1 |
-| Audit trails produced | 1 — committed to append-only ledger, consumable by any framework assessor |
+| Frameworks satisfied | `NZISM` · `ISM` · `Essential Eight Maturity Level 3` · `IRAP` |
+| Evidence production events | One |
+| Audit trails produced | Committed to append-only ledger, Consumable by any framework assessor |
 
 ## Credentials
 
@@ -147,12 +131,11 @@ frameworks:
 
 ---
 
-## Assurance Programmes
+## Assurance Programme
 
 | Programme | Purpose | Control Frameworks |
 |---|---|---|
-| [`SIRA`](https://github.com/whatheheckisthis/Stochastic-Invalidation-Risk-Architecture) | Quantitative risk assurance engine. Converts immutable control telemetry into quantified residual exposure for board and prudential reviewer consumption. | ISM · ASD E8 ML3 · APRA CPS 220 · SOC 2 · ISO/IEC 27001 |
-| [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) | Closed control index. Maps all framework obligations to enumerated, assertion, evidence committed assurance targets across a unified crosswalk. | ISM · ASD E8 ML3 · APRA CPS 220 · SOC 2 · ISO/IEC 27001 |
+| [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index) | Closed control index. Maps all framework obligations to enumerated, assertion, and evidence-committed assurance targets across a unified crosswalk. | `NZISM` · `ISM` · `Essential Eight Maturity Level 3` · `IRAP` |
 
 
 
