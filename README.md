@@ -16,7 +16,7 @@ Recent portfolio work [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-t
 | **Delivery focus**                   | Identity governance, access control, entitlement management, authentication, and cloud identity migration                         |
 | **Primary IAM platforms**            | SailPoint IGA · Microsoft Entra ID · Active Directory · Azure RBAC · Conditional Access                                           |
 | **Enterprise identity environments** | Hybrid identity estates spanning modern cloud platforms, enterprise application platforms, and legacy authentication dependencies |
-| **Application integration**          | Jellybeans · WildFly / JBoss EAP · Java EE · LDAP · federated authentication                                                      |
+| **Application integration**          | EJB · WildFly / JBoss EAP · Java EE · LDAP · federated authentication                                                      |
 | **Integration**               | Legacy browser authentication plugins · JScript · ActiveX                                                                         |
 | **IAM operations**                   | Access reviews · entitlement validation · privileged access · application onboarding · ServiceNow · BAU identity operations       |
 | **Governance & assurance**           | SoD analysis · entitlement governance · migration assurance · auditable identity controls                                         |
