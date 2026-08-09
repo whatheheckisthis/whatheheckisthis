@@ -45,7 +45,7 @@ The practice focuses on IAM-relevant requirements including identity governance,
 
 ### ISM — Australian Government Information Security Manual
 
-ISM is used as a security control reference for Australian enterprise and government-aligned identity engagements.
+ISM is used as a security control reference for Australian enterprise and government identity engagements.
 
 Relevant requirements are applied to identity and access controls covering authentication, privileged access, entitlement governance, access management, and identity assurance. Control evidence is derived from the underlying IAM data and operational processes rather than maintained as a separate compliance activity.
 
@@ -103,13 +103,8 @@ flowchart LR
     K --> D
 ```
 
-### BAU operating flow
+This operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.
 
-The operating flow reflects standard enterprise IAM practice: identity, account, entitlement, role, and application access data is sourced from authoritative identity stores and connected applications, consolidated within the IGA platform, and processed through established IAM workflows.
-
-The resulting identity and access state supports recurring access certification, entitlement validation, SoD analysis, privileged access review, application onboarding, and remediation. Changes are validated and recorded through the normal IAM lifecycle, maintaining an accurate and reviewable access state across the enterprise environment.
-
-### BAU operating flow
 
 | Stage            | IAM Activity                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -120,22 +115,19 @@ The resulting identity and access state supports recurring access certification,
 | **Certify**   | Approved access and completed remediation are recorded as part of the ongoing access-governance cycle.                          |
 | **Maintain**  | The resulting IAM state supports subsequent reviews, application onboarding, entitlement governance, and migration activities.  |
 
-The example reflects a standard enterprise IAM BAU operating model, where identity, account, entitlement, role, and application access data is collected from authoritative identity sources and integrated applications. The IGA layer consolidates these relationships to support access certification, entitlement validation, SoD analysis, and privileged-access governance, with approved changes and remediation actions propagated through established IAM workflows.
 
-This operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.
 
 
 > **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
 
 
 
-## Enterprise Security Practice
+## Enterprise Security 
 
 The practice is grounded in enterprise IAM and security operations across Microsoft Entra ID, Active Directory, SailPoint IGA, Azure RBAC, Conditional Access, ServiceNow, Azure Policy, Microsoft Defender, and Microsoft Sentinel.
 
 The focus is on delivering practical BAU and transformation outcomes across identity governance, access control, privileged access, entitlement management, migration assurance, and security compliance, while providing auditable evidence of control effectiveness.
 
----
 
 ## Delivery & Assurance Model
 
