@@ -30,9 +30,9 @@ Recent portfolio work [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-t
 
 | Certification | Title                                                  | Year | Status                | Relevant Foundation                                                                   |
 | ------------- | ------------------------------------------------------ | ---: | --------------------- | ------------------------------------------------------------------------------------- |
-| **AZ-500**    | Microsoft Certified: Azure Security Engineer Associate | 2022 | **Lapsed / Inactive** | Azure identity, access control, security administration, and platform security        |
-| **AZ-204**    | Microsoft Certified: Azure Developer Associate         | 2020 | **Lapsed / Inactive** | Azure application development, platform integration, and cloud service implementation |
-| **EX200**     | Red Hat Certified System Administrator                 | 2022 | **Lapsed / Inactive** | Enterprise Linux administration, systems operations, and platform support             |
+| **AZ-500**    | Microsoft Certified: Azure Security Engineer Associate | 2022 | **Lapsed** | Azure identity, access control, security administration, and platform security        |
+| **AZ-204**    | Microsoft Certified: Azure Developer Associate         | 2020 | **Lapsed** | Azure application development, platform integration, and cloud service implementation |
+| **EX200**     | Red Hat Certified System Administrator                 | 2022 | **Lapsed** | Enterprise Linux administration, systems operations, and platform support             |
 
 
 ## Framework Adherence
@@ -66,19 +66,10 @@ MFA                          — phishing-resistant MFA, privileged and unprivil
 Regular backups              — RTO/RPO-bound, restoration tested, integrity-chained
 ```
 
-| ML3 Control Area                       | IAM Practice / Enterprise Technology                                                              |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **Restrict administrative privileges** | SailPoint IGA · Microsoft Entra ID · Active Directory · Azure RBAC · privileged access governance |
-| **MFA**                                | Microsoft Entra ID · Conditional Access · federated authentication                                |
-| **User application hardening**         | Legacy browser authentication dependencies · JScript · ActiveX · enterprise application access    |
-| **Application control**                | SailPoint IGA entitlement management · application onboarding · access governance                 |
-| **Access governance**                  | SailPoint IGA · access certification · entitlement validation · SoD analysis                      |
-| **Enterprise application integration** | WildFly / JBoss EAP · Java EE · Jellybeans · LDAP                                                 |
-| **Identity migration**                 | OCI → Azure identity and access migration · legacy IAM relationship analysis · Azure RBAC         |
 
-### Example — Identity Governance Architecture
+## Example — 
 
-The following operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.
+*The following operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.*
 
 ```mermaid
 flowchart LR
@@ -144,29 +135,11 @@ flowchart LR
     STATE -->|"Updated identity and access state"| MODEL
 ```
 
-> **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
-
-
-
 ## Enterprise Security 
 
-The practice is grounded in enterprise IAM and security operations across Microsoft Entra ID, Active Directory, SailPoint IGA, Azure RBAC, Conditional Access, ServiceNow, Azure Policy, Microsoft Defender, and Microsoft Sentinel.
+*The practice is grounded in enterprise IAM and security operations across Microsoft Entra ID, Active Directory, SailPoint IGA, Azure RBAC, Conditional Access, ServiceNow, Azure Policy, Microsoft Defender, and Microsoft Sentinel.*
 
-The focus is on delivering practical BAU and transformation outcomes across identity governance, access control, privileged access, entitlement management, migration assurance, and security compliance, while providing auditable evidence of control effectiveness.
-
-
-## Delivery & Assurance Model
-
-| Component               | Description                                                                                                                             |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **Identity Data Model** | SailPoint IGA identity, entitlement, role, and access relationships                                                                     |
-| **Control Model**       | Existing IAM and security controls represented as defined, testable assertions                                                          |
-| **Evidence Model**      | Machine-verifiable evidence generated from underlying identity and access data                                                          |
-| **Control Crosswalk**   | Existing ISM and NZISM requirements mapped to applicable IAM controls                                                                   |
-| **Assurance Model**     | Reusable control evidence supporting governance, audit, and compliance activities                                                       |
-| **Operating Model**     | Enterprise IAM BAU processes including access reviews, entitlement validation, privileged access, SoD analysis, and migration assurance |
-
->**Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
+> **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
 
 `NZISM` · `ISM` · `Essential Eight Maturity Level 3`   
 
