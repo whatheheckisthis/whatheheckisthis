@@ -76,47 +76,73 @@ Regular backups              — RTO/RPO-bound, restoration tested, integrity-ch
 | **Enterprise application integration** | WildFly / JBoss EAP · Java EE · Jellybeans · LDAP                                                 |
 | **Identity migration**                 | OCI → Azure identity and access migration · legacy IAM relationship analysis · Azure RBAC         |
 
-### Example — IAM Access Governance Data Path
+### Example — Identity Governance Architecture
+
+The following operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.
 
 ```mermaid
 flowchart LR
-    A[Identity Sources<br/>Active Directory · Entra ID]
-    B[Enterprise Applications<br/>WildFly / JBoss EAP · Java EE · Jellybeans]
-    C[LDAP / Federation]
 
-    A --> D[SailPoint IGA]
-    B --> D
-    C --> D
+    subgraph SOURCES["Identity Sources"]
+        AD["Active Directory"]
+        ENTRA["Microsoft Entra ID"]
+    end
 
-    D --> E[Identity & Entitlement Data]
-    E --> F[Role & Access Relationships]
+    subgraph TARGETS["Enterprise Systems"]
+        JBOSS["WildFly / JBoss EAP"]
+        JAVA["Java EE Applications"]
+        LDAP["LDAP"]
+        FED["Federated Applications"]
+    end
 
-    F --> G[Access Reviews]
-    F --> H[SoD Analysis]
-    F --> I[Privileged Access Review]
+    subgraph IGA["SailPoint Identity Governance"]
+        AGG["Identity & Account Aggregation"]
+        MODEL["Identity & Entitlement Model"]
+        ROLES["Roles & Access Relationships"]
 
-    G --> J[Certification / Remediation]
-    H --> J
-    I --> J
+        CERT["Access Certification"]
+        SOD["SoD Analysis"]
+        PRIV["Privileged Access Review"]
 
-    J --> K[Updated IAM State]
-    K --> D
+        REM["Remediation & Provisioning"]
+    end
+
+    subgraph OUTCOMES["Governance Outcomes"]
+        DECISIONS["Certification Decisions"]
+        VIOLATIONS["SoD Violations"]
+        STATE["Updated IAM State"]
+    end
+
+    AD -->|"Identity / account data"| AGG
+    ENTRA -->|"Identity / account data"| AGG
+
+    JBOSS -->|"Accounts / entitlements"| AGG
+    JAVA -->|"Accounts / entitlements"| AGG
+    LDAP -->|"Directory data"| AGG
+    FED -->|"Federated identity / access data"| AGG
+
+    AGG --> MODEL
+    MODEL --> ROLES
+
+    ROLES --> CERT
+    ROLES --> SOD
+    ROLES --> PRIV
+
+    CERT --> DECISIONS
+    SOD --> VIOLATIONS
+    PRIV --> DECISIONS
+
+    DECISIONS --> REM
+    VIOLATIONS --> REM
+
+    REM -->|"Provision / modify / revoke"| JBOSS
+    REM -->|"Provision / modify / revoke"| JAVA
+    REM -->|"Provision / modify / revoke"| LDAP
+    REM -->|"Provision / modify / revoke"| FED
+
+    REM --> STATE
+    STATE -->|"Updated identity and access state"| MODEL
 ```
-
-This operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.
-
-
-| Stage            | IAM Activity                                                                                                                    |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Collect**   | Identity, entitlement, and application access data is sourced from enterprise identity systems and connected applications.      |
-| **Normalise** | SailPoint IGA maintains the identity, entitlement, role, and access relationships used for IAM operations and governance.       |
-| **Analyse**   | Access relationships are evaluated through access reviews, entitlement validation, SoD analysis, and privileged-access reviews. |
-| **Remediate** | Unauthorised, excessive, or conflicting access is removed, corrected, or recorded through established IAM workflows.            |
-| **Certify**   | Approved access and completed remediation are recorded as part of the ongoing access-governance cycle.                          |
-| **Maintain**  | The resulting IAM state supports subsequent reviews, application onboarding, entitlement governance, and migration activities.  |
-
-
-
 
 > **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
 
