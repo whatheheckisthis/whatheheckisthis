@@ -67,7 +67,7 @@ Regular backups              — RTO/RPO-bound, restoration tested, integrity-ch
 ```
 
 
-## Example — 
+## Example 
 
 *The following operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.*
 
@@ -134,10 +134,6 @@ flowchart LR
     REM --> STATE
     STATE -->|"Updated identity and access state"| MODEL
 ```
-
-## Enterprise Security 
-
-*The practice is grounded in enterprise IAM and security operations across Microsoft Entra ID, Active Directory, SailPoint IGA, Azure RBAC, Conditional Access, ServiceNow, Azure Policy, Microsoft Defender, and Microsoft Sentinel.*
 
 > **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
 
