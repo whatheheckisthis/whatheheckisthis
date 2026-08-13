@@ -1,6 +1,6 @@
 # Hello, I'm Dhruv, 
 
-IAM practionner delivering fixed-term IAM engagements across enterprise environments, with a career spanning enterprise IAM operations, identity governance, access control, and cloud identity migration. Specialises in Identity Governance and Administration, Microsoft Entra ID, SailPoint IGA, entitlement management, and access governance across hybrid enterprise environments. Brings practical experience delivering identity migration and assurance outcomes, including Azure RBAC, SoD analysis, and auditable identity controls aligned with ISM and NZISM requirements.
+IAM Practitioner delivering fixed-term IAM engagements across enterprise environments, with a career spanning enterprise IAM operations, identity governance, access control, and cloud identity migration. Specialises in Identity Governance and Administration, Microsoft Entra ID, SailPoint IGA, entitlement management, and access governance across hybrid enterprise environments. Brings practical experience delivering identity migration and assurance outcomes, including Azure RBAC, SoD analysis, and auditable identity controls aligned with ISM and NZISM requirements.
 
 `NZISM` · `ISM` · `Essential Eight Maturity Level 3`   
  
