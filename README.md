@@ -1,39 +1,23 @@
 # Hello, I'm Dhruv, 
 
-Cybersecurity Practitioner delivering fixed-term IAM engagements across enterprise environments, with a career spanning enterprise IAM operations, identity governance, access control, and cloud identity migration. Specialises in Identity Governance and Administration, Microsoft Entra ID, SailPoint IGA, entitlement management, and access governance across hybrid enterprise environments. Brings practical experience delivering identity migration and assurance outcomes, including Azure RBAC, SoD analysis, and auditable identity controls aligned with ISM and NZISM requirements.
+`NZISM` · `ISM` · `Essential Eight Maturity Level 3`
 
-`NZISM` · `ISM` · `Essential Eight Maturity Level 3`   
- 
+## Executive Summary
 
-Recent portfolio work [`IĀTŌ-v7`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-v7), the latest iteration of the [`IĀTŌ`](https://github.com/whatheheckisthis/Intent-to-Auditable-Trust-Object-Index). The work explores structured representation and validation of identity and access states across enterprise identity environments, with a focus on making access relationships and security properties auditable and machine-verifiable.
+A cross disciplinary practice at the intersection of corporate law, commercial law, and enterprise technology governance, with core competencies spanning technology transactions, data protection and privacy, and regulatory compliance. Credentialed via CRISC, with a strategic engagement focus on Essential Eight remediation and assurance, underpinned by foundational technical proficiency in enterprise identity and access management (Microsoft Entra ID, Active Directory, IAM).
 
-## Overview
+This repository serves as a portfolio of record for self-directed initiatives undertaken to evidence core deliverables: control identification, identity and access governance, control-state and evidence representation, and the operational linkage between enterprise technology architecture and regulatory/governance obligations.
 
-| Attribute                            | Position                                                                                                                          |
-| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Practice**                         | Identity Engineering / Identity Governance & Administration                                                                       |
-| **Engagement model**                 | Fixed-term IAM contractor                                                                                                         |
-| **Delivery focus**                   | Identity governance, access control, entitlement management, authentication, and cloud identity migration                         |
-| **Primary IAM platforms**            | SailPoint IGA · Microsoft Entra ID · Active Directory · Azure RBAC · Conditional Access                                           |
-| **Enterprise identity environments** | Hybrid identity estates spanning modern cloud platforms, enterprise application platforms, and legacy authentication dependencies |
-| **Application integration**          | EJB · WildFly / JBoss EAP · Java EE · LDAP · federated authentication                                                      |
-| **Integration**               | Legacy browser authentication plugins · JScript · ActiveX                                                                         |
-| **IAM operations**                   | Access reviews · entitlement validation · privileged access · application onboarding · ServiceNow · BAU identity operations       |
-| **Governance & assurance**           | SoD analysis · entitlement governance · migration assurance · auditable identity controls                                         |
-| **Cloud migration**                  | Legacy IAM relationship analysis and access-control migration into Microsoft Azure                                                |
-| **Framework alignment**              | NZISM · ISM, applied to relevant identity and access controls                                                                     |
-| **Primary environments**             | Australian and New Zealand enterprise environments                                                                                |
+## Core Practice Areas
 
-## Certifications & Technical Foundation
-
-*Industry certifications previously held across Azure security, cloud platform engineering, and enterprise systems administration, providing the technical foundation underpinning subsequent IAM, identity governance, and cloud identity migration engagements.*
-
-| Certification | Title                                                  | Year | Status                | Relevant Foundation                                                                   |
-| ------------- | ------------------------------------------------------ | ---: | --------------------- | ------------------------------------------------------------------------------------- |
-| **AZ-500**    | Microsoft Certified: Azure Security Engineer Associate | 2022 | **Lapsed** | Azure identity, access control, security administration, and platform security        |
-| **AZ-204**    | Microsoft Certified: Azure Developer Associate         | 2020 | **Lapsed** | Azure application development, platform integration, and cloud service implementation |
-| **EX200**     | Red Hat Certified System Administrator                 | 2022 | **Lapsed** | Enterprise Linux administration, systems operations, and platform support             |
-
+| Practice Area | Scope of Engagement |
+| --- | --- |
+| **Legal** | Technology transactions, product counselling, regulatory compliance & investigations, data protection & privacy |
+| **Risk Management** | Technology, product, and enterprise risk; contractual risk allocation frameworks |
+| **Governance** | Technology governance, data governance, access governance |
+| **GRC** | Information risk management, control assessment, evidence lifecycle, assurance |
+| **Client Engagement** | Essential Eight remediation & assurance program delivery |
+| **Technical Enablement** | Microsoft Entra ID, Active Directory, IAM, enterprise technology controls |
 
 ## Framework Adherence
 
@@ -67,77 +51,37 @@ Regular backups              — RTO/RPO-bound, restoration tested, integrity-ch
 ```
 
 
-## Example 
+## Governance Operating Model
 
-*The following operating model supports the ongoing IAM lifecycle across joiner, mover, and leaver processes, access reviews, entitlement governance, application onboarding, privileged-access administration, and identity migration, using the managed identity and access state as the primary operational data set.*
 
-```mermaid
-flowchart LR
 
-    subgraph SOURCES["Identity Sources"]
-        AD["Active Directory"]
-        ENTRA["Microsoft Entra ID"]
-    end
-
-    subgraph TARGETS["Enterprise Systems"]
-        JBOSS["WildFly / JBoss EAP"]
-        JAVA["Java EE Applications"]
-        LDAP["LDAP"]
-        FED["Federated Applications"]
-    end
-
-    subgraph IGA["SailPoint Identity Governance"]
-        AGG["Identity & Account Aggregation"]
-        MODEL["Identity & Entitlement Model"]
-        ROLES["Roles & Access Relationships"]
-
-        CERT["Access Certification"]
-        SOD["SoD Analysis"]
-        PRIV["Privileged Access Review"]
-
-        REM["Remediation & Provisioning"]
-    end
-
-    subgraph OUTCOMES["Governance Outcomes"]
-        DECISIONS["Certification Decisions"]
-        VIOLATIONS["SoD Violations"]
-        STATE["Updated IAM State"]
-    end
-
-    AD -->|"Identity / account data"| AGG
-    ENTRA -->|"Identity / account data"| AGG
-
-    JBOSS -->|"Accounts / entitlements"| AGG
-    JAVA -->|"Accounts / entitlements"| AGG
-    LDAP -->|"Directory data"| AGG
-    FED -->|"Federated identity / access data"| AGG
-
-    AGG --> MODEL
-    MODEL --> ROLES
-
-    ROLES --> CERT
-    ROLES --> SOD
-    ROLES --> PRIV
-
-    CERT --> DECISIONS
-    SOD --> VIOLATIONS
-    PRIV --> DECISIONS
-
-    DECISIONS --> REM
-    VIOLATIONS --> REM
-
-    REM -->|"Provision / modify / revoke"| JBOSS
-    REM -->|"Provision / modify / revoke"| JAVA
-    REM -->|"Provision / modify / revoke"| LDAP
-    REM -->|"Provision / modify / revoke"| FED
-
-    REM --> STATE
-    STATE -->|"Updated identity and access state"| MODEL
+```text
+Regulatory / Governance Requirement
+                ↓
+          Control Objective
+                ↓
+     Enterprise Technology State
+                ↓
+             Evidence
+                ↓
+           Assessment
+                ↓
+           Remediation
+                ↓
+            Assurance
 ```
 
-> **Disclaimer:** Identity and access outcomes are derived from structured SailPoint IGA data, including identity, entitlement, role, and access relationship records. Extracted IAM data is normalised and evaluated against defined control assertions to produce auditable evidence and support automated validation. Control mappings are cross-referenced against existing requirements and control identifiers within ISM and NZISM; they do not represent newly defined compliance obligations.
+Essential Eight remediation and assurance represents the primary strategic focus area within the GRC practice, examining the end-to-end relationship between control objectives, enterprise technology environments, implementation state, evidence collection, remediation planning, and assurance sign off. The operating philosophy prioritizes rigorous documentation of the control environment over checklist-driven compliance.
 
-`NZISM` · `ISM` · `Essential Eight Maturity Level 3`   
+
+
+## Portfolio Deliverables
+
+Engagements represented in this portfolio span: identity and access control, access governance, control identification and state representation, evidence management, data governance, enterprise technology controls, governance workflow design, and foundational cloud architecture.
+
+
+
+`Corporate Law` · `Commercial Law` · `Regulatory Law` · `Technology Risk` · `Information Risk` · `GRC` · `Essential Eight` · `Data Protection & Privacy`
 
 **Engagement enquiries:** Direct recruiter engagement preferred.
 
